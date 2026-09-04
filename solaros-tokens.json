@@ -1,0 +1,1062 @@
+{
+  "_generated": "from canon/tokens.toml by build/emit.py \u2014 do not edit",
+  "_provenance": {
+    "commit": "dbc08e8300ee9a337aca93c69f4c9892526fa9b7",
+    "dirty": false,
+    "built": "2026-09-04",
+    "tokens_sha256": "a57b8dca0e03fb434071db2eefb672b81ec970b22c22101e2e8a40e5270c68c1",
+    "surfaces_sha256": "bf56c54e40dbe121e9f8fcb21fd1195a4897bd0f23c1d56f7a546e5f5f8dee85"
+  },
+  "literal": {
+    "ink": "#0A0A0B",
+    "paper": "#F6F6F4",
+    "violet": "#6C3EE5",
+    "indigo": "#7C8BFF",
+    "cyan": "#4BCDE7",
+    "amber": "#F0B95E",
+    "green": "#74E08C"
+  },
+  "type": {
+    "family_sans": "Inter",
+    "family_mono": "JetBrains Mono",
+    "family_display": "Zalando Sans Expanded",
+    "display_default": "sans",
+    "display_opt_in": true,
+    "display_rule": "Once per page on composed graphics: one element, the largest one. A second use\nmakes it a body face and it is not one. On the web the opt-in is an attribute,\nwhich also stops the layout requesting the face unless a page asks for it.",
+    "scale": {
+      "web": {
+        "xs": [
+          12,
+          16
+        ],
+        "sm": [
+          14,
+          20
+        ],
+        "base": [
+          16,
+          24
+        ],
+        "lg": [
+          18,
+          28
+        ],
+        "xl": [
+          20,
+          28
+        ],
+        "3xl": [
+          30,
+          36
+        ],
+        "4xl": [
+          36,
+          40
+        ],
+        "6xl": [
+          60,
+          60
+        ],
+        "7xl": [
+          72,
+          72
+        ]
+      },
+      "canvas": {
+        "steps": [
+          14,
+          19,
+          22,
+          24,
+          27,
+          30,
+          34,
+          42,
+          54,
+          72,
+          90,
+          120,
+          160
+        ],
+        "relation_to_web": "shares 14 / 30 / 72; not a multiple. See DECISIONS.md B3b",
+        "roles": {
+          "chrome": 14,
+          "label": 19,
+          "mono": 22,
+          "body": 24,
+          "body_lg": 27,
+          "lead": 30,
+          "lead_lg": 34,
+          "sub": 42,
+          "display": 54,
+          "headline": 72,
+          "headline_lg": 90,
+          "statement": 120,
+          "statement_lg": 160
+        }
+      }
+    },
+    "weight": {
+      "regular": 400,
+      "medium": 500,
+      "semibold": 600,
+      "mono_bold": 700
+    },
+    "tracking": {
+      "tight": "-0.02em",
+      "wide": "0.05em"
+    },
+    "measure": {
+      "copy": "72ch",
+      "container": "1280px"
+    }
+  },
+  "form": {
+    "radius_none": 0,
+    "radius_sharp": "2px",
+    "rule_weight": "1px"
+  },
+  "motion": {
+    "dur_fast": "150ms",
+    "dur_slow": "600ms",
+    "ease_out": "cubic-bezier(0.16, 1, 0.3, 1)"
+  },
+  "ground": {
+    "ink": {
+      "bg": "#0A0A0B",
+      "bg_elevated": "#111113",
+      "text": "#F6F6F4",
+      "text_dim": "#B4B2BF",
+      "text_muted": "#7C7A89",
+      "rule": "rgba(255, 255, 255, 0.10)",
+      "accent": "#9078FF",
+      "accent_solid": "#6C3EE5",
+      "on_accent": "#FFFFFF",
+      "accent_hov": "#7449F0",
+      "accent_prs": "#7C54FA",
+      "accent_dim": "#6F67AB",
+      "accent_10": "rgba(144, 120, 255, 0.10)",
+      "mark": "#6C3EE5",
+      "mark_press": "#4C1CCC",
+      "on_mark": "#FFFFFF",
+      "alt": "#4BCDE7",
+      "error": "#ff8a8a",
+      "error_10": "rgba(255, 138, 138, 0.10)",
+      "warn": "#F0B95E",
+      "warn_10": "rgba(240, 185, 94, 0.10)",
+      "good": "#74E08C",
+      "good_10": "rgba(116, 224, 140, 0.10)",
+      "teal": "#5FD2C2",
+      "teal_10": "rgba(95, 210, 194, 0.10)",
+      "pink": "#F582B7",
+      "pink_10": "rgba(245, 130, 183, 0.10)",
+      "mark_roles": {
+        "line": "#F5F5F5",
+        "mid": "#A1A1A6",
+        "hot": "#9078FF"
+      },
+      "texture": {
+        "grid": "#16161B",
+        "node": "#0E0E12",
+        "node_live": "#11111F",
+        "lattice": "#23232A",
+        "dot_dim": "#3A3A40"
+      },
+      "syntax": {
+        "comment": "#6E6E73",
+        "keyword": "#8F9BD6",
+        "type": "#5FD2C2",
+        "fn": "#B9C2EA",
+        "const": "#C8A86A",
+        "string": "#7FB08A"
+      }
+    },
+    "paper": {
+      "bg": "#F6F6F4",
+      "bg_elevated": "#FFFFFF",
+      "text": "#16161A",
+      "text_dim": "#55555C",
+      "text_muted": "#8A8A90",
+      "text_muted_open": "OPEN-3",
+      "rule": "#E2E2DE",
+      "accent": "#6C3EE5",
+      "accent_solid": "#6C3EE5",
+      "on_accent": "#FFFFFF",
+      "accent_hov": "#5A21CD",
+      "accent_prs": "#4B00B4",
+      "accent_dim": "#5848A1",
+      "accent_10": "rgba(108, 62, 229, 0.08)",
+      "mark": "#6C3EE5",
+      "mark_press": "#4C1CCC",
+      "on_mark": "#FFFFFF",
+      "alt": "#137B90",
+      "error": "#C84141",
+      "error_10": "rgba(200, 65, 65, 0.09)",
+      "warn": "#B47711",
+      "warn_text": "#9B660E",
+      "warn_10": "rgba(180, 119, 17, 0.09)",
+      "good": "#25A441",
+      "good_text": "#1D8234",
+      "good_10": "rgba(37, 164, 65, 0.09)",
+      "teal": "#237E71",
+      "teal_10": "rgba(35, 126, 113, 0.09)",
+      "pink": "#C43F7F",
+      "pink_10": "rgba(196, 63, 127, 0.09)",
+      "mark_roles": {
+        "line": "#16161A",
+        "mid": "#55555C",
+        "hot": "#6C3EE5"
+      },
+      "texture": {
+        "grid": "#E8E8ED",
+        "node": "#F1F1F4",
+        "node_live": "#EDEDF5",
+        "lattice": "#D5D5DC",
+        "dot_dim": "#B8B8BF"
+      },
+      "syntax": {
+        "comment": "#86868C",
+        "keyword": "#4C51B8",
+        "type": "#0E6E78",
+        "fn": "#3F3D9E",
+        "const": "#8A5A00",
+        "string": "#2C6A46"
+      }
+    },
+    "violet": {
+      "bg": "#6C3EE5",
+      "bg_elevated": "#7A50E8",
+      "text": "#FFFFFF",
+      "text_dim": "#E2DAFA",
+      "text_muted": "#CBBCF9",
+      "rule": "rgba(255, 255, 255, 0.22)",
+      "accent": "#FFFFFF",
+      "accent_solid": "#FFFFFF",
+      "on_accent": "#6C3EE5",
+      "accent_hov": "#E2DAFA",
+      "accent_prs": "#D7DCFF",
+      "accent_dim": "#CBBCF9",
+      "accent_10": "rgba(255, 255, 255, 0.10)",
+      "mark": "#FFFFFF",
+      "on_mark": "#6C3EE5",
+      "alt": "#D7DCFF",
+      "warn": "#F0B95E",
+      "good": "#74E08C",
+      "mark_roles": {
+        "line": "#FFFFFF",
+        "mid": "#CBBCF9",
+        "hot": "#FFFFFF"
+      }
+    }
+  },
+  "drafting": {
+    "ink": "accent",
+    "note": "Annotation is the exception and is deliberate: a dimension line and its text\nare text_dim, never the accent. A dimension measures the subject, it is not the\nsubject, and giving it the accent would spend the accent on a ruler.",
+    "structure": {
+      "visible": {
+        "width": 1.1,
+        "opacity": 1.0
+      },
+      "thin": {
+        "width": 0.6,
+        "opacity": 0.55
+      },
+      "hidden": {
+        "width": 0.7,
+        "opacity": 0.45,
+        "dash": "5 3"
+      },
+      "centre": {
+        "width": 0.6,
+        "opacity": 0.4,
+        "dash": "14 3 2 3"
+      }
+    },
+    "structure_on_violet": {
+      "ink": "#FFFFFF",
+      "visible": {
+        "width": 1.1,
+        "opacity": 1.0
+      },
+      "thin": {
+        "width": 0.6,
+        "opacity": 0.45
+      },
+      "centre": {
+        "width": 0.6,
+        "opacity": 0.35,
+        "dash": "14 3 2 3"
+      }
+    },
+    "annotation": {
+      "dimension_line": {
+        "ink": "text_dim",
+        "width": 0.7
+      },
+      "dimension_text": {
+        "ink": "text_dim",
+        "size": 9.0,
+        "tracking": "1px"
+      },
+      "engraving": {
+        "ink": "accent",
+        "opacity": 0.8,
+        "size": 7.5,
+        "tracking": "2.2px"
+      },
+      "engraving_on_violet": {
+        "ink": "#FFFFFF",
+        "opacity": 0.95,
+        "size": 7.5,
+        "tracking": "2.2px"
+      }
+    },
+    "motion": {
+      "duration": "900ms",
+      "ease": "cubic-bezier(0.16, 1, 0.3, 1)",
+      "reduced_motion": "settle with no travel"
+    },
+    "lit": {
+      "key": {
+        "colour": "#FFFFFF",
+        "intensity": 1.1,
+        "position": [
+          3,
+          6,
+          4
+        ]
+      },
+      "fill": {
+        "colour": "#9078FF",
+        "intensity": 0.35,
+        "position": [
+          -4,
+          -1,
+          -3
+        ]
+      },
+      "ambient": {
+        "colour": "#FFFFFF",
+        "intensity": 0.22
+      },
+      "surface": {
+        "metalness": 0.78,
+        "roughness": 0.46
+      }
+    }
+  },
+  "shadow": {
+    "ink": {
+      "panel": "0 1px 2px rgba(10, 10, 11, 0.16),\n0 12px 32px -8px rgba(10, 10, 11, 0.28)",
+      "raised": "inset 0 1px 0 rgba(255, 255, 255, 0.06),\n0 0 0 1px rgba(255, 255, 255, 0.06),\n0 1px 1px -0.5px rgba(0, 0, 0, 0.40),\n0 3px 3px -1.5px rgba(0, 0, 0, 0.36),\n0 6px 6px -3px rgba(0, 0, 0, 0.32),\n0 12px 12px -6px rgba(0, 0, 0, 0.28),\n0 24px 24px -12px rgba(0, 0, 0, 0.24)"
+    },
+    "violet": {
+      "raised": "inset 0 1px 0 rgba(255, 255, 255, 0.22),\n0 0 0 1px rgba(255, 255, 255, 0.22),\n0 1px 1px -0.5px rgba(10, 10, 11, 0.30),\n0 3px 3px -1.5px rgba(10, 10, 11, 0.26),\n0 6px 6px -3px rgba(10, 10, 11, 0.22),\n0 12px 12px -6px rgba(10, 10, 11, 0.18),\n0 24px 24px -12px rgba(10, 10, 11, 0.14)"
+    }
+  },
+  "atmosphere": {
+    "flat_ground": true,
+    "opt_in": true,
+    "layer": [
+      {
+        "kind": "dust",
+        "tint": "line"
+      },
+      {
+        "kind": "grain"
+      }
+    ],
+    "grain": {
+      "tile": "180px",
+      "ink": {
+        "blend": "soft-light",
+        "opacity": 0.62
+      },
+      "paper": {
+        "blend": "multiply",
+        "opacity": 0.12
+      },
+      "violet": {
+        "blend": "soft-light",
+        "opacity": 0.17
+      }
+    },
+    "dust": {
+      "formula": "max(120, round(w * h * 260 / (1080 * 1350)))",
+      "seed": 11,
+      "ground": "ink",
+      "radii": [
+        0.6,
+        0.7,
+        0.9,
+        1.0,
+        1.3,
+        1.7
+      ],
+      "opacity": [
+        0.05,
+        0.34
+      ],
+      "bias": "denser toward the lower right",
+      "arcs": 2,
+      "override": [
+        {
+          "surface": "solaros.uk hero",
+          "count": 520,
+          "reason": "The formula gives about 180 at this size. 520 would be busy under a page of body\ncopy; over a hero it is the point. Prominence comes from the dust count, not from\nraising grain \u2014 grain is a wash and pushing it greys the whole surface."
+        }
+      ]
+    }
+  },
+  "ramp": {
+    "ink": {
+      "50": "#F8F8F9",
+      "100": "#DDDDE0",
+      "200": "#A5A5AD",
+      "300": "#6F6F7A",
+      "400": "#3C3C42",
+      "500": "#0A0A0B",
+      "600": "#0A0A0C",
+      "700": "#0B0B0C",
+      "800": "#0B0B0D",
+      "900": "#0C0C0D"
+    },
+    "paper": {
+      "50": "#F9F9F8",
+      "100": "#F9F9F8",
+      "200": "#F8F8F7",
+      "300": "#F7F7F6",
+      "400": "#F7F7F5",
+      "500": "#F6F6F4",
+      "600": "#C8C8BB",
+      "700": "#999982",
+      "800": "#636351",
+      "900": "#2A2A23"
+    },
+    "violet": {
+      "50": "#F6F4FD",
+      "100": "#E7E0FB",
+      "200": "#C8B7F5",
+      "300": "#AA8FF0",
+      "400": "#8B66EA",
+      "500": "#6C3EE5",
+      "600": "#4C1CCC",
+      "700": "#391598",
+      "800": "#250E64",
+      "900": "#120730"
+    },
+    "indigo": {
+      "50": "#F2F4FF",
+      "100": "#E5E8FF",
+      "200": "#CBD1FF",
+      "300": "#B1BAFF",
+      "400": "#96A2FF",
+      "500": "#7C8BFF",
+      "600": "#2D45FF",
+      "700": "#0019DE",
+      "800": "#00108F",
+      "900": "#000741"
+    },
+    "amber": {
+      "50": "#FEFAF3",
+      "100": "#FCF3E3",
+      "200": "#F9E4C2",
+      "300": "#F6D6A0",
+      "400": "#F3C77F",
+      "500": "#F0B95E",
+      "600": "#EA9E1F",
+      "700": "#B47711",
+      "800": "#754D0B",
+      "900": "#372405"
+    },
+    "green": {
+      "50": "#F5FDF6",
+      "100": "#E6F9EB",
+      "200": "#CAF3D3",
+      "300": "#ADEDBB",
+      "400": "#91E6A4",
+      "500": "#74E08C",
+      "600": "#3BD35D",
+      "700": "#25A441",
+      "800": "#186B2A",
+      "900": "#0B3114"
+    }
+  },
+  "series": {
+    "status": "open",
+    "see": "DECISIONS.md OPEN-1",
+    "settled": {
+      "3": {
+        "ink": "#74E08C",
+        "paper": "#74E08C"
+      },
+      "4": {
+        "ink": "#F0B95E",
+        "paper": "#F0B95E"
+      },
+      "5": {
+        "ink": "#F582B7",
+        "paper": "#F582B7"
+      }
+    }
+  },
+  "surfaces": {
+    "meta": {
+      "status": "derived \u2014 awaiting correction",
+      "derived": "2026-09-03",
+      "source": "Industrial Accents rev A \u00b7 industrial-design-language.md (441 lines, 16 accents\nin its taxonomy, 13 taken forward) \u00b7 the deck templates and video frames as\nmeasured"
+    },
+    "rule": [
+      {
+        "n": 1,
+        "title": "It means something.",
+        "body": "A part number is on a part. A tick scale measures a thing that is on the page.\nIf the accent points at nothing it is a sticker, and stickers are what the work\nmust never become."
+      },
+      {
+        "n": 2,
+        "title": "One per screen.",
+        "body": "A single accent reads as intent. Three read as a theme. The unit of \"one\" is\ndifferent on each surface \u2014 see `unit` below."
+      },
+      {
+        "n": 3,
+        "title": "One colour stays one colour.",
+        "body": "Violet is the only accent. Amber appears once in a whole artefact, as a warning\nband, and never as decoration."
+      },
+      {
+        "n": 4,
+        "title": "Mono is the voice.",
+        "body": "Every label, ID and readout is JetBrains Mono, uppercase, tracked. The sans face\nnever plays instrument. Sizes differ per surface because reading distance does."
+      },
+      {
+        "n": 5,
+        "title": "No fake data.",
+        "body": "Every identifier, hash and count is real or is plainly a placeholder. A barcode\nis a pattern, never a code that pretends to scan."
+      }
+    ],
+    "surface": {
+      "website": {
+        "label": "Website",
+        "what": "Live DOM. The Astro site, docs, partners, projects, and the platform apps.",
+        "unit": "the viewport \u2014 and the viewport varies, so check at 375 and at 1440",
+        "type_scale": "web",
+        "type_floor": 12,
+        "basis": "verified \u2014 read from the website token package and the running site",
+        "can": [
+          "hover, focus and active states",
+          "scroll position as an input",
+          "custom properties resolving at runtime, so one drawing serves every ground",
+          "prefers-reduced-motion",
+          "the viewer's own theme"
+        ],
+        "cannot": [
+          "assume a viewport size",
+          "assume the viewer will interact at all"
+        ],
+        "rules": [
+          "Anything interactive must look interactive before it is touched.",
+          "Reduced motion settles with no travel \u2014 the parts arrive where they belong.",
+          "An accent that only appears on hover is invisible to a third of visitors. It may enrich, never carry."
+        ]
+      },
+      "presentation": {
+        "label": "Presentation",
+        "what": "Fixed 1920x1080 .dc.html, exported to PDF, PPTX and PNG.",
+        "unit": "the slide",
+        "type_scale": "canvas",
+        "type_floor": 19,
+        "basis": "verified for geometry and export path \u2014 the deck templates were measured, 120x140\npadding and the 92/40/27 type observed. The raster claims below are engineering\nreasoning and have NOT been checked against a real PPTX export.",
+        "can": [
+          "a ground chosen per slide by the author, rather than by a viewer",
+          "a whole slide given to one object",
+          "reveal animation in the .dc.html"
+        ],
+        "cannot": [
+          "hover, focus or active \u2014 every state must be the resting state",
+          "carry its reveal animation into the PDF or the PPTX",
+          "rely on the viewer scanning at their own pace on a projected deck"
+        ],
+        "rules": [
+          "The 14px chrome step is unreadable from the back of a room. Nothing below 19px carries meaning on this surface.",
+          "A hairline survives a PDF; it does not reliably survive a PPTX raster. Structural lines export at 1.5px minimum.",
+          "Anything that would have been a hover state becomes either the resting state or a second slide.",
+          "The five-layer raised shadow is fine on screen and flattens in export. Do not let elevation carry meaning here."
+        ]
+      },
+      "video": {
+        "label": "Video",
+        "what": "1920x1080 HTML frames captured to MP4. The explainer pipeline and Remotion.",
+        "unit": "the shot",
+        "type_scale": "canvas",
+        "type_floor": 19,
+        "basis": "verified for geometry and type \u2014 the frames were measured, 86/34/24 observed.\nThe compression claims are engineering reasoning about H.264 and have NOT been\nmeasured against a real encode. Treat them as the thing to test first.",
+        "can": [
+          "motion as the information rather than as decoration",
+          "a value that changes over time, honestly, with no interaction",
+          "building a figure one element per beat"
+        ],
+        "cannot": [
+          "any interaction at all",
+          "let the viewer re-read, pause or scan",
+          "show anything meaningful for less than about a second"
+        ],
+        "rules": [
+          "Time is the constraint the other surfaces do not have. If it cannot be read in the time it is up, it is not on the screen.",
+          "An identifier needs longer than a word. Truncate a hash to eight characters; never scroll one.",
+          "No repeating pattern finer than roughly 32px pitch, and no 1px high-contrast line \u2014 fine high-frequency detail is what a codec spends its bitrate on and then loses.",
+          "Grain competes with the encoder for the same bits. Expect to run it lower here than the 0.62 the site uses, and measure rather than guess.",
+          "Motion must carry meaning. A part that moves for atmosphere is the video equivalent of a sticker."
+        ]
+      }
+    },
+    "accent": [
+      {
+        "id": "01",
+        "name": "Numeral as object",
+        "medium": "CSS",
+        "physical": "The number on a hangar door, a part bin, a ticket. It is the biggest thing because it is what you find things by.",
+        "website": {
+          "verdict": "yes",
+          "becomes": "Section markers, large and at low contrast. One per section, never inside a card.",
+          "overuse": "Two large numerals in one viewport, or a numeral that counts nothing."
+        },
+        "presentation": {
+          "verdict": "yes",
+          "becomes": "The slide's own number, as the object \u2014 set large in a corner, or bled off the edge. It is the strongest cheap way to make a deck feel built rather than typed.",
+          "overuse": "A numeral on a slide that is not part of a run. A single slide has nothing to count."
+        },
+        "video": {
+          "verdict": "yes, with care",
+          "becomes": "A chapter or shot number on a title card. It may count up as the transition itself, which is the one place the numeral can move.",
+          "overuse": "A numeral that changes faster than it can be read. Under about a second it is a flicker, not a number."
+        }
+      },
+      {
+        "id": "02",
+        "name": "Part and log IDs",
+        "medium": "CSS",
+        "physical": "The stamp on a component. It says this is a specific thing, and it can be traced.",
+        "website": {
+          "verdict": "yes",
+          "becomes": "Anywhere a real identifier exists \u2014 a feature, a run, a hash. Long values truncate.",
+          "overuse": "Invented IDs. An ID on something with no identity in the product."
+        },
+        "presentation": {
+          "verdict": "yes",
+          "becomes": "The same, at 19px or above. A hash is truncated to eight characters and the full value goes in the notes \u2014 nobody reads 64 characters from a slide.",
+          "overuse": "A full hash set at chrome size because it fits. It fits and it cannot be read."
+        },
+        "video": {
+          "verdict": "yes, truncated",
+          "becomes": "Eight characters, held still, on screen long enough to read. It earns its place when the point is that the thing is traceable.",
+          "overuse": "A scrolling or typing-on ID. The effect reads as a hacker film and the value cannot be read at any frame."
+        }
+      },
+      {
+        "id": "03",
+        "name": "Spec plate",
+        "medium": "CSS",
+        "physical": "The rating plate riveted to a machine: label, value, nothing else.",
+        "website": {
+          "verdict": "yes",
+          "becomes": "Four facts that want to be read in a second. The hand-off section, a build run, the OS page.",
+          "overuse": "Plates for prose. A plate with a sentence in it is a table wearing a costume."
+        },
+        "presentation": {
+          "verdict": "yes \u2014 the strongest of the thirteen here",
+          "becomes": "A whole slide can be a spec plate, up to about six rows. It is the most honest way a deck states facts, and it needs no illustration.",
+          "overuse": "More than six rows, or two plates on one slide. At that point it is a table and should be a table."
+        },
+        "video": {
+          "verdict": "yes, built",
+          "becomes": "One row per beat, arriving in reading order. The build is what gives the viewer the pace they cannot set themselves.",
+          "overuse": "All rows at once. On a page the reader scans; in a shot they cannot, and a full plate flashed up is a wall."
+        }
+      },
+      {
+        "id": "04",
+        "name": "Tick scale",
+        "medium": "CSS",
+        "physical": "A ruler on the edge of a drawing. It gives the object a size and the reader a position.",
+        "website": {
+          "verdict": "yes",
+          "becomes": "Beside a figure, marking a real quantity \u2014 requirements traced, files emitted, progress through a run. It may follow scroll.",
+          "overuse": "A scale that measures nothing, or one on every card."
+        },
+        "presentation": {
+          "verdict": "yes, frozen",
+          "becomes": "Held at one value, with that value also stated in words. A reader cannot hover to find out what the mark means.",
+          "overuse": "A scale whose value is only readable from its position. On a projected slide, position is approximate."
+        },
+        "video": {
+          "verdict": "yes \u2014 better here than anywhere",
+          "becomes": "It animates to its value, and the animation IS the information. A count arriving is more legible in motion than as a number that was always there.",
+          "overuse": "Animating for its own sake, or ending on a value the shot never states."
+        }
+      },
+      {
+        "id": "05",
+        "name": "Registration marks",
+        "medium": "CSS",
+        "physical": "Printer's crosses that align the plates. They say something precise was placed here.",
+        "website": {
+          "verdict": "yes",
+          "becomes": "The corners of a product shot or a placeholder. A replacement for the corner brackets, not an addition to them.",
+          "overuse": "Crosses on text blocks. Crosses and brackets together."
+        },
+        "presentation": {
+          "verdict": "yes",
+          "becomes": "The corners of the slide's image area \u2014 and they double as the visible edge of the safe margin, which is useful on a surface that has one.",
+          "overuse": "Crosses on every slide. They mark a placed image, not a page."
+        },
+        "video": {
+          "verdict": "conditional",
+          "becomes": "Only at 2px or heavier. A 1px cross is exactly the high-frequency detail an encoder discards, and it will crawl.",
+          "overuse": "Any 1px cross. Also crosses that move \u2014 a registration mark that travels is not registering anything."
+        }
+      },
+      {
+        "id": "06",
+        "name": "Construction lines",
+        "medium": "SVG",
+        "physical": "The engineer's drawing behind the object: datums, arcs, centre lines. The object was designed, not dropped.",
+        "website": {
+          "verdict": "yes",
+          "becomes": "Behind a render or the rings. Drawn in the drafting weights.",
+          "overuse": "Lines behind text. Lines unrelated to the object's geometry."
+        },
+        "presentation": {
+          "verdict": "yes",
+          "becomes": "Behind the slide's object. Strong here, because a slide is already a composed frame and the lines give it a reason to be composed that way.",
+          "overuse": "Construction lines as a background texture on a text slide."
+        },
+        "video": {
+          "verdict": "yes \u2014 the best transition available",
+          "becomes": "The lines DRAW IN, then the object appears on them. It shows the object being designed, which is the argument the whole brand makes, in the one medium that can show a sequence.",
+          "overuse": "Drawing in lines that the object then ignores. If the geometry does not match, the sequence is a lie the viewer can see."
+        }
+      },
+      {
+        "id": "07",
+        "name": "Leader captions",
+        "medium": "SVG",
+        "physical": "The callout on an exploded drawing: a line from the part to its name.",
+        "website": {
+          "verdict": "yes",
+          "becomes": "From a part to its name \u2014 the exploded rings, a build-output figure naming the requirement above the code it produced.",
+          "overuse": "Leaders to things that already have a label under them."
+        },
+        "presentation": {
+          "verdict": "yes",
+          "becomes": "The same, and the leaders set the reading order of the slide. A reader follows them in the order they are drawn.",
+          "overuse": "More than about four on a slide. Past that the leaders become the subject."
+        },
+        "video": {
+          "verdict": "yes, one at a time",
+          "becomes": "Leaders arriving one per beat is the natural build, and each one buys the viewer the time to read the label at its end.",
+          "overuse": "All leaders at once, or leaders that arrive faster than their labels can be read."
+        }
+      },
+      {
+        "id": "08",
+        "name": "Dot grid",
+        "medium": "CSS",
+        "physical": "Perforated metal, a drilled plate, a notebook cover. A surface with a pitch.",
+        "website": {
+          "verdict": "yes",
+          "becomes": "Behind a render or the rings, faded toward one corner. Not on cards with text \u2014 that was tried and it fought the grain.",
+          "overuse": "Full-bleed grids. Grids behind reading text."
+        },
+        "presentation": {
+          "verdict": "yes",
+          "becomes": "Behind a slide's object, faded. Safe here because the surface is fixed and the pitch can be set once.",
+          "overuse": "A grid on a slide that has no object on it."
+        },
+        "video": {
+          "verdict": "conditional \u2014 32px pitch or coarser",
+          "becomes": "Only at a coarse pitch. The site's 22px grid is fine high-frequency detail and will alias and crawl through an encode.",
+          "overuse": "The web pitch reused unchanged. It is the single most likely thing on this list to look broken in a finished video."
+        }
+      },
+      {
+        "id": "09",
+        "name": "Rotated edge label",
+        "medium": "CSS",
+        "physical": "The label on a spine, the number on the flank of a vehicle. Read from the side, because that is where you are.",
+        "website": {
+          "verdict": "yes",
+          "becomes": "The left edge of a large card or figure, once per section at most.",
+          "overuse": "Rotated body copy. More than one rotated label in view."
+        },
+        "presentation": {
+          "verdict": "yes",
+          "becomes": "The left edge of the slide. It is a good way to carry a section name through a run of slides without spending the headline on it.",
+          "overuse": "A rotated label carrying anything the slide actually needs read. It is orientation, not content."
+        },
+        "video": {
+          "verdict": "conditional \u2014 static only",
+          "becomes": "Only if it holds still for the whole shot. Rotated type that moves cannot be read at any frame.",
+          "overuse": "A rotated label on a moving or transitioning element."
+        }
+      },
+      {
+        "id": "10",
+        "name": "Hazard band",
+        "medium": "CSS",
+        "physical": "The tape on a step, the stripe on a tail fin. A boundary you must notice.",
+        "website": {
+          "verdict": "yes \u2014 once site-wide",
+          "becomes": "The beta mark, or a draft build's state. The one place amber may appear.",
+          "overuse": "Stripes as pattern. Two of them anywhere."
+        },
+        "presentation": {
+          "verdict": "yes \u2014 once per deck",
+          "becomes": "A state slide: draft, not for distribution, pre-production. One deck, one band.",
+          "overuse": "A band on every slide of a draft deck. Once is a warning; every slide is a wallpaper."
+        },
+        "video": {
+          "verdict": "yes \u2014 once per video",
+          "becomes": "Amber survives an encode well, because the stripe is broad and low-frequency. It is the safest strong mark on this surface.",
+          "overuse": "A band that animates. A hazard stripe is a boundary, and a boundary that moves is not one."
+        }
+      },
+      {
+        "id": "11",
+        "name": "Tear line",
+        "medium": "CSS",
+        "physical": "The perforation on a ticket. Two parts that were one thing, and can be separated.",
+        "website": {
+          "verdict": "yes",
+          "becomes": "The join between a specification and what was cut from it \u2014 the hand-off, the export, the CSV that leaves.",
+          "overuse": "As a section divider. The page has just removed its lines; this would be a fancier line."
+        },
+        "presentation": {
+          "verdict": "yes",
+          "becomes": "The split between what was specified and what was produced, on one slide. It can also be the slide boundary itself in a two-part build.",
+          "overuse": "A perforation between two things that were never one thing."
+        },
+        "video": {
+          "verdict": "yes \u2014 as a wipe",
+          "becomes": "The transition tears along the perforation. It is the one transition in this list that means something: the artefact separating into its parts.",
+          "overuse": "Using it as a general-purpose wipe between unrelated shots."
+        }
+      },
+      {
+        "id": "12",
+        "name": "Barcode as pattern",
+        "medium": "CSS",
+        "physical": "The mark that lets a machine read what a person reads. On a screen it can only be texture, honestly.",
+        "website": {
+          "verdict": "yes, small",
+          "becomes": "A small faded area on an export or package figure. Never with digits under it.",
+          "overuse": "A barcode implying it scans to something. Barcodes on cards."
+        },
+        "presentation": {
+          "verdict": "yes, small",
+          "becomes": "The same. Small, faded, on a figure about something leaving the system.",
+          "overuse": "A barcode at slide scale. Large, it stops being texture and starts claiming to be a code."
+        },
+        "video": {
+          "verdict": "no",
+          "becomes": "Nothing. A 1-to-3px repeating vertical pattern is the worst case for an encoder \u2014 it is pure high-frequency detail with no motion, and it will smear and pulse.",
+          "overuse": "Any use at all on this surface. If a package needs marking, use the ID instead."
+        }
+      },
+      {
+        "id": "13",
+        "name": "Coordinate readout",
+        "medium": "CSS",
+        "physical": "The instrument reading: where the thing is right now. Live, tabular, exact.",
+        "website": {
+          "verdict": "yes",
+          "becomes": "Attached to a figure, showing one requirement's real position in the output. It may update as the reader interacts.",
+          "overuse": "Readouts of invented values. The cyber-brutalist coordinate for its own sake."
+        },
+        "presentation": {
+          "verdict": "yes, as a snapshot",
+          "becomes": "A frozen reading, carrying a run id or a timestamp so it is honestly a snapshot. Nothing is live on a slide, and a readout that implies it is, lies.",
+          "overuse": "A readout marked live, or with a state like Running, on a surface where nothing runs."
+        },
+        "video": {
+          "verdict": "yes \u2014 the one honest live case",
+          "becomes": "It may tick and update as the shot plays. This is the only surface where a value can change without the viewer acting, so it is the only place `live` is true without interaction.",
+          "overuse": "Values ticking faster than they can be read, or a readout that changes with no cause shown in the shot."
+        }
+      }
+    ]
+  },
+  "_flat": {
+    "ground.ink.bg": "#0A0A0B",
+    "ground.ink.bg_elevated": "#111113",
+    "ground.ink.text": "#F6F6F4",
+    "ground.ink.text_dim": "#B4B2BF",
+    "ground.ink.text_muted": "#7C7A89",
+    "ground.ink.rule": "rgba(255, 255, 255, 0.10)",
+    "ground.ink.accent": "#9078FF",
+    "ground.ink.accent_solid": "#6C3EE5",
+    "ground.ink.on_accent": "#FFFFFF",
+    "ground.ink.accent_hov": "#7449F0",
+    "ground.ink.accent_prs": "#7C54FA",
+    "ground.ink.accent_dim": "#6F67AB",
+    "ground.ink.accent_10": "rgba(144, 120, 255, 0.10)",
+    "ground.ink.mark": "#6C3EE5",
+    "ground.ink.mark_press": "#4C1CCC",
+    "ground.ink.on_mark": "#FFFFFF",
+    "ground.ink.alt": "#4BCDE7",
+    "ground.ink.error": "#ff8a8a",
+    "ground.ink.error_10": "rgba(255, 138, 138, 0.10)",
+    "ground.ink.warn": "#F0B95E",
+    "ground.ink.warn_10": "rgba(240, 185, 94, 0.10)",
+    "ground.ink.good": "#74E08C",
+    "ground.ink.good_10": "rgba(116, 224, 140, 0.10)",
+    "ground.ink.teal": "#5FD2C2",
+    "ground.ink.teal_10": "rgba(95, 210, 194, 0.10)",
+    "ground.ink.pink": "#F582B7",
+    "ground.ink.pink_10": "rgba(245, 130, 183, 0.10)",
+    "ground.ink.mark_roles.line": "#F5F5F5",
+    "ground.ink.mark_roles.mid": "#A1A1A6",
+    "ground.ink.mark_roles.hot": "#9078FF",
+    "ground.ink.texture.grid": "#16161B",
+    "ground.ink.texture.node": "#0E0E12",
+    "ground.ink.texture.node_live": "#11111F",
+    "ground.ink.texture.lattice": "#23232A",
+    "ground.ink.texture.dot_dim": "#3A3A40",
+    "ground.ink.syntax.comment": "#6E6E73",
+    "ground.ink.syntax.keyword": "#8F9BD6",
+    "ground.ink.syntax.type": "#5FD2C2",
+    "ground.ink.syntax.fn": "#B9C2EA",
+    "ground.ink.syntax.const": "#C8A86A",
+    "ground.ink.syntax.string": "#7FB08A",
+    "ground.paper.bg": "#F6F6F4",
+    "ground.paper.bg_elevated": "#FFFFFF",
+    "ground.paper.text": "#16161A",
+    "ground.paper.text_dim": "#55555C",
+    "ground.paper.text_muted": "#8A8A90",
+    "ground.paper.text_muted_open": "OPEN-3",
+    "ground.paper.rule": "#E2E2DE",
+    "ground.paper.accent": "#6C3EE5",
+    "ground.paper.accent_solid": "#6C3EE5",
+    "ground.paper.on_accent": "#FFFFFF",
+    "ground.paper.accent_hov": "#5A21CD",
+    "ground.paper.accent_prs": "#4B00B4",
+    "ground.paper.accent_dim": "#5848A1",
+    "ground.paper.accent_10": "rgba(108, 62, 229, 0.08)",
+    "ground.paper.mark": "#6C3EE5",
+    "ground.paper.mark_press": "#4C1CCC",
+    "ground.paper.on_mark": "#FFFFFF",
+    "ground.paper.alt": "#137B90",
+    "ground.paper.error": "#C84141",
+    "ground.paper.error_10": "rgba(200, 65, 65, 0.09)",
+    "ground.paper.warn": "#B47711",
+    "ground.paper.warn_text": "#9B660E",
+    "ground.paper.warn_10": "rgba(180, 119, 17, 0.09)",
+    "ground.paper.good": "#25A441",
+    "ground.paper.good_text": "#1D8234",
+    "ground.paper.good_10": "rgba(37, 164, 65, 0.09)",
+    "ground.paper.teal": "#237E71",
+    "ground.paper.teal_10": "rgba(35, 126, 113, 0.09)",
+    "ground.paper.pink": "#C43F7F",
+    "ground.paper.pink_10": "rgba(196, 63, 127, 0.09)",
+    "ground.paper.mark_roles.line": "#16161A",
+    "ground.paper.mark_roles.mid": "#55555C",
+    "ground.paper.mark_roles.hot": "#6C3EE5",
+    "ground.paper.texture.grid": "#E8E8ED",
+    "ground.paper.texture.node": "#F1F1F4",
+    "ground.paper.texture.node_live": "#EDEDF5",
+    "ground.paper.texture.lattice": "#D5D5DC",
+    "ground.paper.texture.dot_dim": "#B8B8BF",
+    "ground.paper.syntax.comment": "#86868C",
+    "ground.paper.syntax.keyword": "#4C51B8",
+    "ground.paper.syntax.type": "#0E6E78",
+    "ground.paper.syntax.fn": "#3F3D9E",
+    "ground.paper.syntax.const": "#8A5A00",
+    "ground.paper.syntax.string": "#2C6A46",
+    "ground.violet.bg": "#6C3EE5",
+    "ground.violet.bg_elevated": "#7A50E8",
+    "ground.violet.text": "#FFFFFF",
+    "ground.violet.text_dim": "#E2DAFA",
+    "ground.violet.text_muted": "#CBBCF9",
+    "ground.violet.rule": "rgba(255, 255, 255, 0.22)",
+    "ground.violet.accent": "#FFFFFF",
+    "ground.violet.accent_solid": "#FFFFFF",
+    "ground.violet.on_accent": "#6C3EE5",
+    "ground.violet.accent_hov": "#E2DAFA",
+    "ground.violet.accent_prs": "#D7DCFF",
+    "ground.violet.accent_dim": "#CBBCF9",
+    "ground.violet.accent_10": "rgba(255, 255, 255, 0.10)",
+    "ground.violet.mark": "#FFFFFF",
+    "ground.violet.on_mark": "#6C3EE5",
+    "ground.violet.alt": "#D7DCFF",
+    "ground.violet.warn": "#F0B95E",
+    "ground.violet.good": "#74E08C",
+    "ground.violet.mark_roles.line": "#FFFFFF",
+    "ground.violet.mark_roles.mid": "#CBBCF9",
+    "ground.violet.mark_roles.hot": "#FFFFFF",
+    "ramp.ink.50": "#F8F8F9",
+    "ramp.ink.100": "#DDDDE0",
+    "ramp.ink.200": "#A5A5AD",
+    "ramp.ink.300": "#6F6F7A",
+    "ramp.ink.400": "#3C3C42",
+    "ramp.ink.500": "#0A0A0B",
+    "ramp.ink.600": "#0A0A0C",
+    "ramp.ink.700": "#0B0B0C",
+    "ramp.ink.800": "#0B0B0D",
+    "ramp.ink.900": "#0C0C0D",
+    "ramp.paper.50": "#F9F9F8",
+    "ramp.paper.100": "#F9F9F8",
+    "ramp.paper.200": "#F8F8F7",
+    "ramp.paper.300": "#F7F7F6",
+    "ramp.paper.400": "#F7F7F5",
+    "ramp.paper.500": "#F6F6F4",
+    "ramp.paper.600": "#C8C8BB",
+    "ramp.paper.700": "#999982",
+    "ramp.paper.800": "#636351",
+    "ramp.paper.900": "#2A2A23",
+    "ramp.violet.50": "#F6F4FD",
+    "ramp.violet.100": "#E7E0FB",
+    "ramp.violet.200": "#C8B7F5",
+    "ramp.violet.300": "#AA8FF0",
+    "ramp.violet.400": "#8B66EA",
+    "ramp.violet.500": "#6C3EE5",
+    "ramp.violet.600": "#4C1CCC",
+    "ramp.violet.700": "#391598",
+    "ramp.violet.800": "#250E64",
+    "ramp.violet.900": "#120730",
+    "ramp.indigo.50": "#F2F4FF",
+    "ramp.indigo.100": "#E5E8FF",
+    "ramp.indigo.200": "#CBD1FF",
+    "ramp.indigo.300": "#B1BAFF",
+    "ramp.indigo.400": "#96A2FF",
+    "ramp.indigo.500": "#7C8BFF",
+    "ramp.indigo.600": "#2D45FF",
+    "ramp.indigo.700": "#0019DE",
+    "ramp.indigo.800": "#00108F",
+    "ramp.indigo.900": "#000741",
+    "ramp.amber.50": "#FEFAF3",
+    "ramp.amber.100": "#FCF3E3",
+    "ramp.amber.200": "#F9E4C2",
+    "ramp.amber.300": "#F6D6A0",
+    "ramp.amber.400": "#F3C77F",
+    "ramp.amber.500": "#F0B95E",
+    "ramp.amber.600": "#EA9E1F",
+    "ramp.amber.700": "#B47711",
+    "ramp.amber.800": "#754D0B",
+    "ramp.amber.900": "#372405",
+    "ramp.green.50": "#F5FDF6",
+    "ramp.green.100": "#E6F9EB",
+    "ramp.green.200": "#CAF3D3",
+    "ramp.green.300": "#ADEDBB",
+    "ramp.green.400": "#91E6A4",
+    "ramp.green.500": "#74E08C",
+    "ramp.green.600": "#3BD35D",
+    "ramp.green.700": "#25A441",
+    "ramp.green.800": "#186B2A",
+    "ramp.green.900": "#0B3114",
+    "literal.ink": "#0A0A0B",
+    "literal.paper": "#F6F6F4",
+    "literal.violet": "#6C3EE5",
+    "literal.indigo": "#7C8BFF",
+    "literal.cyan": "#4BCDE7",
+    "literal.amber": "#F0B95E",
+    "literal.green": "#74E08C"
+  }
+}

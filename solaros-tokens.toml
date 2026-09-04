@@ -1,0 +1,608 @@
+# GENERATED — do not edit. Built from canon/tokens.toml by build/emit.py.
+#
+# canon commit  dbc08e8300ee9a337aca93c69f4c9892526fa9b7
+# sha256        a57b8dca0e03fb434071db2eefb672b81ec970b22c22101e2e8a40e5270c68c1
+# built         2026-09-04
+#
+# This is canon's own shape, not any consumer's. Bind it to the names your host
+# already uses rather than reshaping this file — see AGENTS.md.
+
+# Solaros — canon
+#
+# The single source of every decided value. Nothing here is a copy of anything
+# else; every other token file in the estate is generated from this one.
+#
+# WHY a value is what it is lives in DECISIONS.md, keyed by ruling id. This file
+# carries the value and the pointer, never the argument — an argument repeated in
+# two places is an argument that will disagree with itself.
+#
+# Contrast figures are measured against the ground named in the section. They are
+# recorded, not computed at build time, and `build/check.py` re-measures every one
+# of them and fails on drift.
+
+[meta]
+name     = "Solaros"
+slug     = "solaros"
+version  = "1.0.0"
+ruled    = 2026-09-03
+rulings  = "canon/DECISIONS.md"
+note     = """
+Sixteen rulings made against a measured census of fourteen surfaces. Two derived
+questions remain open and are marked OPEN-1 and OPEN-2 in DECISIONS.md; the
+values they would fill are absent here rather than guessed."""
+
+
+# ===========================================================================
+# The literals
+# ---------------------------------------------------------------------------
+# Seven values. Everything below either points at one of these or is an approved,
+# measured role value recorded once.
+#
+# Six of the seven agreed across every file in the estate before unification.
+# Cyan is the seventh and arrived 2026-08-28.
+# ===========================================================================
+[literal]
+ink    = "#0A0A0B"
+paper  = "#F6F6F4"
+violet = "#6C3EE5"   # the brand mark
+indigo = "#7C8BFF"   # seeds ramp-indigo. NOT an interface colour — A3
+cyan   = "#4BCDE7"   # the second voice in artwork — A4
+amber  = "#F0B95E"
+green  = "#74E08C"
+
+
+# ===========================================================================
+# Type
+# ===========================================================================
+[type]
+family_sans    = "Inter"
+family_mono    = "JetBrains Mono"
+family_display = "Zalando Sans Expanded"
+
+display_default = "sans"      # B1 — headings are Inter
+display_opt_in  = true        # a surface turns the display face on deliberately
+display_rule    = """
+Once per page on composed graphics: one element, the largest one. A second use
+makes it a body face and it is not one. On the web the opt-in is an attribute,
+which also stops the layout requesting the face unless a page asks for it."""
+
+# Michroma is NOT a Solaros face — B2.
+
+[type.scale.web]
+# px, with matched line height. Unchanged from the shipped web scale.
+xs   = [12, 16]
+sm   = [14, 20]
+base = [16, 24]
+lg   = [18, 28]
+xl   = [20, 28]
+"3xl" = [30, 36]
+"4xl" = [36, 40]
+"6xl" = [60, 60]
+"7xl" = [72, 72]
+
+[type.scale.canvas]
+# Fixed 1920x1080 surfaces: decks and video frames.
+#
+# GUIDED, NOT GOVERNED — the difference from the web scale above, and the whole
+# of ruling B3b. On the web a scale is a constraint: dozens of components across
+# hundreds of pages, nobody can see them all at once, so the only thing stopping
+# drift is that an unlisted size cannot be used, and lint enforces it. On a fixed
+# canvas one person composes one frame and can see the whole of it. A 2px nudge
+# for balance is the work, not drift.
+#
+# So: start on a step. Depart when the composition asks for it. A departure is a
+# design decision, not a violation, and nothing lints it.
+#
+# Derived from 257 measured uses across the deck templates and the video frames.
+# Against this ladder, 149 of those sit unchanged, 74 move by 5% or less, and 34
+# move further — 23 of the 34 being one-off display sizes on single slides, which
+# is the case this ruling exists to permit.
+steps = [14, 19, 22, 24, 27, 30, 34, 42, 54, 72, 90, 120, 160]
+
+# NOT a multiple of the web scale, and the attempt is recorded because it is the
+# obvious thing to try. Web x1.5 moves 31% of measured uses: the canvas working
+# range, 19 to 34, falls inside a gap the web scale skips entirely (20 -> 30),
+# and 14px deck chrome does not scale with the canvas because it is already at a
+# legibility floor. The two ladders share 14, 30 and 72 and diverge elsewhere for
+# that reason.
+relation_to_web = "shares 14 / 30 / 72; not a multiple. See DECISIONS.md B3b"
+
+[type.scale.canvas.roles]
+# What each step is FOR, from what the measured uses were doing. A starting point
+# for a new piece, not an allocation.
+chrome    = 14    # footers, wordmark lockup lines
+label     = 19    # mono eyebrows, small caps
+mono      = 22    # the largest single cluster, 45 uses
+body      = 24    # the second largest, 41 uses
+body_lg   = 27
+lead      = 30
+lead_lg   = 34
+sub       = 42
+display   = 54
+headline  = 72
+headline_lg = 90
+statement = 120
+statement_lg = 160
+
+[type.weight]
+regular  = 400
+medium   = 500
+semibold = 600
+# Mono only, and only for a numeral or an identifier being used as an OBJECT —
+# a section number, a part ID. Never for running mono text. Ruling F2.
+mono_bold = 700
+
+[type.tracking]
+tight = "-0.02em"
+wide  = "0.05em"    # mono labels
+
+[type.measure]
+copy      = "72ch"
+container = "1280px"
+
+
+# ===========================================================================
+# Form
+# ===========================================================================
+[form]
+radius_none  = 0
+radius_sharp = "2px"    # radius stops here. A 10px corner reads as a template
+rule_weight  = "1px"
+
+[motion]
+dur_fast = "150ms"
+dur_slow = "600ms"
+ease_out = "cubic-bezier(0.16, 1, 0.3, 1)"
+
+
+# ===========================================================================
+# Grounds
+# ---------------------------------------------------------------------------
+# Three. Every role is resolved per ground rather than once, because a colour
+# that carries on ink does not carry on paper and the reverse.
+#
+# STATE CHANGE HOLDS HUE. Hover and press move lightness only, always away from
+# the ground. On ink that means going lighter; on paper, darker. A control
+# changes state, not colour.
+# ===========================================================================
+
+# ---------------------------------------------------------------------------
+[ground.ink]
+# The default ground.
+bg          = "#0A0A0B"
+bg_elevated = "#111113"
+
+# Revised 2026-09-03 by ruling F1. The greys moved from 286deg to 293deg in
+# OKLCh and roughly doubled in chroma, so they lean toward the violet rather
+# than sitting neutral. text_muted is the one that had to move: every mono
+# label runs at 10-12px on it, and the old value was 3.90:1 there.
+text        = "#F6F6F4"   # 18.29:1 — the paper literal. The estate has one white
+text_dim    = "#B4B2BF"   #  9.48:1
+text_muted  = "#7C7A89"   #  4.71:1 — clears the text floor, unlike its predecessor
+rule        = "rgba(255, 255, 255, 0.10)"   # alpha, so it composites on any ground
+
+# The accent needs two values here: brand violet is 3.26:1 on ink and cannot
+# carry text, but is fine as a FILL where the label is white at 6.07:1. — A1
+accent       = "#9078FF"   # 5.95:1 — text, links, focus, key numerals
+accent_solid = "#6C3EE5"   # fills, labelled with on_accent
+on_accent    = "#FFFFFF"   # 6.07:1 on accent_solid
+accent_hov   = "#7449F0"   # OKLCh L +0.03 — label 5.31:1
+accent_prs   = "#7C54FA"   # OKLCh L +0.06 — label 4.66:1
+accent_dim   = "#6F67AB"   # 3.96:1 — subtle accent fills
+accent_10    = "rgba(144, 120, 255, 0.10)"
+
+# The brand mark. Same colour as accent_solid, kept separate on purpose: "the
+# mark is violet" and "a button is filled violet" are two decisions, and only
+# the second answers to a contrast requirement.
+mark         = "#6C3EE5"
+mark_press   = "#4C1CCC"   # ramp.violet 600
+on_mark      = "#FFFFFF"   # 6.07:1
+
+alt          = "#4BCDE7"   # 10.54:1 — the second voice in artwork, A4
+# No link role. Indigo is artwork only — A3. Marking an external call is
+# OPEN-1 and is not a colour decision until it is ruled to be one.
+
+error        = "#ff8a8a"   # 8.72:1
+error_10     = "rgba(255, 138, 138, 0.10)"
+warn         = "#F0B95E"   # 11.13:1
+warn_10      = "rgba(240, 185, 94, 0.10)"
+good         = "#74E08C"   # 12.05:1
+good_10      = "rgba(116, 224, 140, 0.10)"
+
+# Kept as approved values. Teal must NOT be used beside `alt`: 30.5deg apart, and
+# at 1px and 16% opacity the pair reads as one colour. See DECISIONS.md OPEN-1.
+teal         = "#5FD2C2"
+teal_10      = "rgba(95, 210, 194, 0.10)"
+pink         = "#F582B7"
+pink_10      = "rgba(245, 130, 183, 0.10)"
+
+[ground.ink.mark_roles]
+# Full-strength marks drawn ON the ground. dm-visual's vocabulary. — E2
+line = "#F5F5F5"
+mid  = "#A1A1A6"
+hot  = "#9078FF"   # resolves to the ground's accent — A6
+
+[ground.ink.texture]
+# Near-ground texture that sits just ABOVE the ground and reads as material
+# rather than as a drawn line. A different register from mark_roles, not a
+# second name for it. — E2
+grid      = "#16161B"   #  4.68 L* above ink
+node      = "#0E0E12"
+node_live = "#11111F"
+lattice   = "#23232A"
+dot_dim   = "#3A3A40"
+
+[ground.ink.syntax]
+# E1. Deliberately NOT the accent: the accent means "this figure is about this"
+# and is spent once; syntax means "this is what kind of word this is" and repeats.
+comment = "#6E6E73"
+keyword = "#8F9BD6"
+type    = "#5FD2C2"
+fn      = "#B9C2EA"
+const   = "#C8A86A"
+string  = "#7FB08A"
+
+# ---------------------------------------------------------------------------
+[ground.paper]
+bg          = "#F6F6F4"   # paper, not white — warmer than #FFF
+bg_elevated = "#FFFFFF"
+text        = "#16161A"   # 16.68:1
+text_dim    = "#55555C"   #  6.83:1
+# UNDER THE TEXT FLOOR AND KNOWN. 3.17:1, so mono labels at 10-12px are
+# illegal on this ground — the same defect F1 fixed on ink, which F1 did not
+# reach because it ruled on ink values only. Declared rather than silently
+# carried; check.py requires this declaration to exist and will fail if it is
+# removed without the value being fixed. See DECISIONS.md OPEN-3.
+text_muted  = "#8A8A90"
+text_muted_open = "OPEN-3"
+rule        = "#E2E2DE"
+
+# One value serves text, rings and fills here: brand violet is 5.61:1 on paper.
+# The pair is kept as two names so a component need not know its ground. — A2
+accent       = "#6C3EE5"   # 5.61:1
+accent_solid = "#6C3EE5"
+on_accent    = "#FFFFFF"   # 6.07:1
+accent_hov   = "#5A21CD"   # OKLCh L -0.07 — label 8.29:1
+accent_prs   = "#4B00B4"   # OKLCh L -0.13 — label 10.72:1
+accent_dim   = "#5848A1"   # 6.79:1
+accent_10    = "rgba(108, 62, 229, 0.08)"
+
+mark         = "#6C3EE5"
+mark_press   = "#4C1CCC"
+on_mark      = "#FFFFFF"
+
+alt          = "#137B90"   # 4.55:1 — hue held from #4BCDE7, lightness solved
+
+error        = "#C84141"   # 4.53:1
+error_10     = "rgba(200, 65, 65, 0.09)"
+# warn and good are GRAPHICAL roles — a dot, a badge, a bar. On this ground
+# neither carries as text: 3.47:1 and 3.00:1, over the 3:1 graphical floor and
+# under the 4.5:1 text floor. The *_text pair exists for that case and is
+# dm-visual's, derived 2026-08-11 rather than invented here.
+warn         = "#B47711"   # 3.47:1 graphical — ramp.amber 700, the 500 is 1.7:1 here
+warn_text    = "#9B660E"   # 4.51:1 — when the warning is words
+warn_10      = "rgba(180, 119, 17, 0.09)"
+good         = "#25A441"   # 3.00:1 graphical — ramp.green 700
+good_text    = "#1D8234"   # 4.52:1 — when the state is words
+good_10      = "rgba(37, 164, 65, 0.09)"
+
+teal         = "#237E71"   # 4.52:1
+teal_10      = "rgba(35, 126, 113, 0.09)"
+pink         = "#C43F7F"
+pink_10      = "rgba(196, 63, 127, 0.09)"
+
+[ground.paper.mark_roles]
+line = "#16161A"
+mid  = "#55555C"
+hot  = "#6C3EE5"
+
+[ground.paper.texture]
+# Each value mirrors its ink counterpart's L* separation, so the same distance
+# that sits above the dark ground sits below the light one. Reused unchanged the
+# ink values would invert and the artwork would go from barely-there to harsh.
+grid      = "#E8E8ED"   #  4.71 L* below paper
+node      = "#F1F1F4"   #  1.61 L* below paper
+node_live = "#EDEDF5"   #  2.88 L* below paper
+lattice   = "#D5D5DC"   # 11.38 L* below paper
+dot_dim   = "#B8B8BF"   # 21.86 L* below paper
+
+[ground.paper.syntax]
+# The ink set is light-on-dark and washes out here. Same hues, dropped in
+# lightness until each carries on bg_elevated.
+comment = "#86868C"
+keyword = "#4C51B8"
+type    = "#0E6E78"
+fn      = "#3F3D9E"
+const   = "#8A5A00"
+string  = "#2C6A46"
+
+# ---------------------------------------------------------------------------
+[ground.violet]
+# A DARK ground: 0.123 luminance, so near-black on it is 3.26:1. Every mark goes
+# lighter, and emphasis comes from WEIGHT — nothing is brighter than white.
+# There is therefore no accent colour here. The accent IS white.
+bg          = "#6C3EE5"
+bg_elevated = "#7A50E8"
+text        = "#FFFFFF"
+text_dim    = "#E2DAFA"
+text_muted  = "#CBBCF9"
+rule        = "rgba(255, 255, 255, 0.22)"
+
+accent       = "#FFFFFF"
+accent_solid = "#FFFFFF"
+on_accent    = "#6C3EE5"
+accent_hov   = "#E2DAFA"
+accent_prs   = "#D7DCFF"
+accent_dim   = "#CBBCF9"
+accent_10    = "rgba(255, 255, 255, 0.10)"
+
+mark         = "#FFFFFF"
+on_mark      = "#6C3EE5"
+
+alt          = "#D7DCFF"
+
+warn         = "#F0B95E"   # 3.41:1
+good         = "#74E08C"   # 3.70:1
+
+[ground.violet.mark_roles]
+line = "#FFFFFF"
+mid  = "#CBBCF9"
+hot  = "#FFFFFF"
+
+
+# ===========================================================================
+# Drafting
+# ---------------------------------------------------------------------------
+# Line weights for technical drawing — exploded views, construction lines,
+# state graphs, the dispatcher plate. Ruling F3.
+#
+# ONE INK, THREE WEIGHTS. A drawing is not coloured; it is weighted. Every
+# structural line is the same ink and separates by width, opacity and dash.
+# That is the same argument the violet ground already makes for type — emphasis
+# by weight, not by a second colour — applied to line.
+#
+# Widths are SVG stroke-width in the drawing's own units, so a drawing scaled
+# by a wrapper keeps its weight relationships. Dash arrays are the drafting
+# conventions: short dashes for a hidden edge, long-short-short for a centre
+# line, both read by anyone who has seen an engineering drawing.
+# ===========================================================================
+[drafting]
+ink = "accent"          # the structural ink on ink and paper grounds
+note = """
+Annotation is the exception and is deliberate: a dimension line and its text
+are text_dim, never the accent. A dimension measures the subject, it is not the
+subject, and giving it the accent would spend the accent on a ruler."""
+
+[drafting.structure]
+# The four structural weights. Opacity is applied to the ink named above.
+visible = { width = 1.1, opacity = 1.00 }
+thin    = { width = 0.6, opacity = 0.55 }
+hidden  = { width = 0.7, opacity = 0.45, dash = "5 3" }
+centre  = { width = 0.6, opacity = 0.40, dash = "14 3 2 3" }
+
+[drafting.structure_on_violet]
+# The violet ground takes white as its ink, at lower alphas — white on violet
+# reads stronger than the accent on ink, so the same visual weight needs less.
+# There is no hidden weight here; nothing on this ground is quiet enough to
+# carry a dashed edge as well.
+ink     = "#FFFFFF"
+visible = { width = 1.1, opacity = 1.00 }
+thin    = { width = 0.6, opacity = 0.45 }
+centre  = { width = 0.6, opacity = 0.35, dash = "14 3 2 3" }
+
+[drafting.annotation]
+# Measurement and engraving. Sizes are px in the drawing's own units.
+dimension_line = { ink = "text_dim", width = 0.7 }
+dimension_text = { ink = "text_dim", size = 9.0, tracking = "1px" }
+engraving      = { ink = "accent", opacity = 0.80, size = 7.5, tracking = "2.2px" }
+engraving_on_violet = { ink = "#FFFFFF", opacity = 0.95, size = 7.5, tracking = "2.2px" }
+
+[drafting.motion]
+# Explode and assemble. Assembled it is one thing; exploded it shows its parts,
+# each with a leader to what it is. Reduced motion settles with NO travel rather
+# than snapping — the parts simply arrive where they belong.
+duration = "900ms"
+ease     = "cubic-bezier(0.16, 1, 0.3, 1)"
+reduced_motion = "settle with no travel"
+
+[drafting.lit]
+# The same one-light rule as the shadow ladder, carried into 3D. The fill light
+# is the ACCENT, which is why a rendered part reads as Solaros rather than as a
+# generic grey render.
+key     = { colour = "#FFFFFF", intensity = 1.10, position = [3, 6, 4] }
+fill    = { colour = "#9078FF", intensity = 0.35, position = [-4, -1, -3] }
+ambient = { colour = "#FFFFFF", intensity = 0.22 }
+surface = { metalness = 0.78, roughness = 0.46 }
+
+# ===========================================================================
+# Series palette
+# ---------------------------------------------------------------------------
+# For multi-series charts where several entities must be told apart. Never for
+# emphasis — violet owns that.
+#
+# INCOMPLETE BY DECISION, NOT BY OVERSIGHT. A3 scoped indigo to links, which
+# vacated series-1; A4 recorded teal as unusable beside cyan, which contests
+# series-2. Neither replacement is derivable from what has been ruled.
+# ===========================================================================
+[series]
+status = "open"
+see    = "DECISIONS.md OPEN-1"
+
+[series.settled]
+# These three are unaffected by any ruling.
+"3" = { ink = "#74E08C", paper = "#74E08C" }
+"4" = { ink = "#F0B95E", paper = "#F0B95E" }
+"5" = { ink = "#F582B7", paper = "#F582B7" }
+
+
+# ===========================================================================
+# Elevation
+# ---------------------------------------------------------------------------
+# C1. One light, from above, committed to across a surface. A raised object shows
+# a hair of highlight on its top edge, an edge that is a spread-only shadow at
+# low alpha rather than an opaque border, and a stack below that tightens at the
+# contact and softens as it falls away — each layer doubling offset and blur and
+# pulling spread further negative.
+# ===========================================================================
+[shadow.ink]
+panel = """
+0 1px 2px rgba(10, 10, 11, 0.16),
+0 12px 32px -8px rgba(10, 10, 11, 0.28)"""
+raised = """
+inset 0 1px 0 rgba(255, 255, 255, 0.06),
+0 0 0 1px rgba(255, 255, 255, 0.06),
+0 1px 1px -0.5px rgba(0, 0, 0, 0.40),
+0 3px 3px -1.5px rgba(0, 0, 0, 0.36),
+0 6px 6px -3px rgba(0, 0, 0, 0.32),
+0 12px 12px -6px rgba(0, 0, 0, 0.28),
+0 24px 24px -12px rgba(0, 0, 0, 0.24)"""
+
+[shadow.violet]
+# The highlight and edge step up, since white on violet reads at a lower alpha
+# than white on ink. The stack stays neutral ink so it does not vanish.
+raised = """
+inset 0 1px 0 rgba(255, 255, 255, 0.22),
+0 0 0 1px rgba(255, 255, 255, 0.22),
+0 1px 1px -0.5px rgba(10, 10, 11, 0.30),
+0 3px 3px -1.5px rgba(10, 10, 11, 0.26),
+0 6px 6px -3px rgba(10, 10, 11, 0.22),
+0 12px 12px -6px rgba(10, 10, 11, 0.18),
+0 24px 24px -12px rgba(10, 10, 11, 0.14)"""
+
+
+# ===========================================================================
+# Atmosphere
+# ---------------------------------------------------------------------------
+# Ground, then atmosphere, then content. A STACK, bottom first.
+#
+# What is ABSENT is a decision: no vignette, no wash, no field. Auras and grids
+# were ours, not the brand's, and leaving them out of the stack says so where a
+# comment could not.
+# ===========================================================================
+[atmosphere]
+flat_ground = true
+opt_in      = true   # belongs to a surface, not to the document
+
+[[atmosphere.layer]]
+kind = "dust"
+tint = "line"
+
+[[atmosphere.layer]]
+kind = "grain"
+
+[atmosphere.grain]
+# D1. One opacity is not one effect: soft-light does most of its work at mid
+# luminance and almost none near white, so a light ground takes multiply, and a
+# chromatic ground sits in the middle of soft-light's range and takes far less.
+tile      = "180px"
+ink       = { blend = "soft-light", opacity = 0.62 }
+paper     = { blend = "multiply",   opacity = 0.12 }
+violet    = { blend = "soft-light", opacity = 0.17 }
+
+[atmosphere.dust]
+# D2. Derived from area so no caller silently picks its own number. A surface may
+# pin a count WITH THE REASON ON RECORD.
+formula   = "max(120, round(w * h * 260 / (1080 * 1350)))"
+seed      = 11
+ground    = "ink"          # dark grounds only
+radii     = [0.6, 0.7, 0.9, 1.0, 1.3, 1.7]
+opacity   = [0.05, 0.34]   # scaled by 0.45 + 0.55 * (y / h)
+bias      = "denser toward the lower right"
+arcs      = 2              # two very large faint arcs stop it reading as scattershot
+
+[[atmosphere.dust.override]]
+surface = "solaros.uk hero"
+count   = 520
+reason  = """
+The formula gives about 180 at this size. 520 would be busy under a page of body
+copy; over a hero it is the point. Prominence comes from the dust count, not from
+raising grain — grain is a wash and pushing it greys the whole surface."""
+
+
+# ===========================================================================
+# Ramps
+# ---------------------------------------------------------------------------
+# Six ten-step ramps seeded from the literals. 500 is always the brand value.
+# For discrete bands, overlapping layers and charts — where an exact, opaque,
+# ground-specific step is wanted.
+#
+# For fades, auras and washes use alpha instead: one declaration composites
+# correctly on either ground.
+# ===========================================================================
+[ramp.ink]
+# compresses hard past 500 — near-blacks only
+50 = "#F8F8F9"
+100 = "#DDDDE0"
+200 = "#A5A5AD"
+300 = "#6F6F7A"
+400 = "#3C3C42"
+500 = "#0A0A0B"
+600 = "#0A0A0C"
+700 = "#0B0B0C"
+800 = "#0B0B0D"
+900 = "#0C0C0D"
+
+[ramp.paper]
+# 50 to 500 are near-identical; the range lives at 600+
+50 = "#F9F9F8"
+100 = "#F9F9F8"
+200 = "#F8F8F7"
+300 = "#F7F7F6"
+400 = "#F7F7F5"
+500 = "#F6F6F4"
+600 = "#C8C8BB"
+700 = "#999982"
+800 = "#636351"
+900 = "#2A2A23"
+
+[ramp.violet]
+# 500 is the brand mark, 600 is the press state
+50 = "#F6F4FD"
+100 = "#E7E0FB"
+200 = "#C8B7F5"
+300 = "#AA8FF0"
+400 = "#8B66EA"
+500 = "#6C3EE5"
+600 = "#4C1CCC"
+700 = "#391598"
+800 = "#250E64"
+900 = "#120730"
+
+[ramp.indigo]
+# artwork only — A3. 500 is the literal
+50 = "#F2F4FF"
+100 = "#E5E8FF"
+200 = "#CBD1FF"
+300 = "#B1BAFF"
+400 = "#96A2FF"
+500 = "#7C8BFF"
+600 = "#2D45FF"
+700 = "#0019DE"
+800 = "#00108F"
+900 = "#000741"
+
+[ramp.amber]
+# 700 is the only step legible as text on paper
+50 = "#FEFAF3"
+100 = "#FCF3E3"
+200 = "#F9E4C2"
+300 = "#F6D6A0"
+400 = "#F3C77F"
+500 = "#F0B95E"
+600 = "#EA9E1F"
+700 = "#B47711"
+800 = "#754D0B"
+900 = "#372405"
+
+[ramp.green]
+# 700 carries the light-ground good state
+50 = "#F5FDF6"
+100 = "#E6F9EB"
+200 = "#CAF3D3"
+300 = "#ADEDBB"
+400 = "#91E6A4"
+500 = "#74E08C"
+600 = "#3BD35D"
+700 = "#25A441"
+800 = "#186B2A"
+900 = "#0B3114"
