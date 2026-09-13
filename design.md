@@ -71,6 +71,16 @@ committed to across the whole surface.
 **Form.** `--sol-radius-sharp` is 2px and radius stops there. `--sol-rule-weight`
 is 1px.
 
+**Space and layout.** `--sol-gap-tight` (8px), `--sol-gap` (16px) and
+`--sol-gap-group` (32px) are the only gaps, and `.sol-flow-tight`, `.sol-flow`
+and `.sol-flow-group` are the classes that consume them &mdash; the flow owns the
+gap and **a child never adds its own margin**. `--sol-columns` (12) and
+`--sol-gutter` (24px) are the grid, written as `.sol-grid` with `.sol-span-4`,
+`.sol-span-6`, `.sol-span-7`, `.sol-span-8` and `.sol-span-12`. The safe margin
+and the baseline unit are **open** &mdash; OPEN-4 and OPEN-5 in
+`canon/DECISIONS.md` &mdash; so neither carries a value and neither may be
+guessed.
+
 **Icons.** There is no bespoke Solaros icon set and none is coming — see G2 in
 `canon/DECISIONS.md`. Lucide is the ruled source; Streamline is the reserve for
 communications assets where Lucide lacks a glyph. Where the icon sits inside a

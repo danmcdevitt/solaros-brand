@@ -35,12 +35,14 @@ built from, so a consumer can always answer which version it is built against.
 Changes are proposed as GitHub issues on the private canon repository, by
 invitation. Contact the maintainer.
 
-## Two open questions
+## Open questions
 
 Values are absent rather than guessed. See `DECISIONS.md`.
 
-- **OPEN-1** — three holes in the artwork palette.
-- **OPEN-3** — `text_muted` on the paper ground is still under the text floor.
+- **OPEN-1** — the artwork palette has three holes.
+- **OPEN-3** — `text_muted` on paper is still under the text floor.
+- **OPEN-4** — the safe margin is unruled.
+- **OPEN-5** — there is no baseline unit.
 
 ---
 
