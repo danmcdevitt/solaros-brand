@@ -1,0 +1,48 @@
+/* Connected diagrams — F4. The assembly uses the existing Solaros palette,
+   drafting weights and type steps. Local plate proportions are composition.
+   Requires solaros-web.css. No global element selectors. */
+.sol-connected { container-type:inline-size; color:var(--sol-text); }
+.sol-tree-svg { display:block; width:100%; height:auto; overflow:visible; }
+.sol-tree-svg path, .sol-tree-svg rect { stroke-linecap:square; stroke-linejoin:miter; }
+.sol-tree-line, .sol-tree-plate { stroke:var(--sol-text-dim); stroke-width:var(--sol-draft-visible-w); }
+.sol-tree-plate { fill:var(--sol-bg); }
+.sol-tree-top { fill:var(--sol-bg-elevated); stroke:var(--sol-text-dim); stroke-width:var(--sol-draft-thin-w); }
+.sol-tree-side { fill:var(--sol-bg); stroke:var(--sol-text-dim); stroke-width:var(--sol-draft-thin-w); }
+.sol-tree-fine, .sol-tree-quiet { stroke:var(--sol-text-dim); stroke-width:var(--sol-draft-thin-w); opacity:var(--sol-draft-thin-o); }
+.sol-tree-quiet-face { fill:var(--sol-bg); stroke:var(--sol-text-dim); stroke-width:var(--sol-draft-thin-w); stroke-opacity:var(--sol-draft-thin-o); }
+.sol-tree-selection, .sol-tree-accent { stroke:var(--sol-accent); stroke-width:var(--sol-draft-visible-w); }
+.sol-tree-joint { fill:var(--sol-text-dim); }
+.sol-tree-active-joint, .sol-tree-lamp { fill:var(--sol-accent); }
+.sol-tree-status { stroke:var(--sol-text-dim); stroke-width:var(--sol-draft-visible-w); }
+.sol-tree-port { fill:var(--sol-bg); stroke:var(--sol-accent); stroke-width:var(--sol-draft-visible-w); }
+.sol-tree-warning { stroke:var(--sol-warn); stroke-width:var(--sol-draft-visible-w); }
+.sol-tree-warning-joint { fill:var(--sol-warn); }
+.sol-tree-svg text { font-family:var(--sol-font-mono); font-weight:var(--sol-weight-regular); letter-spacing:var(--sol-tracking-wide); fill:var(--sol-text); }
+.sol-tree-svg .sol-tree-heading { font-size:var(--sol-text-lg); }
+.sol-tree-svg .sol-tree-label, .sol-tree-svg .sol-tree-accent-label { font-size:var(--sol-text-base); }
+.sol-tree-svg .sol-tree-meta { font-size:var(--sol-text-sm); fill:var(--sol-text-dim); }
+.sol-tree-svg .sol-tree-name { font-size:var(--sol-text-xl); }
+.sol-tree-svg .sol-tree-id { font-size:calc(var(--sol-text-6xl) * 1.5); font-weight:var(--sol-weight-mono-bold); letter-spacing:var(--sol-tracking-tight); }
+.sol-tree-svg .sol-tree-sibling-id { font-size:var(--sol-text-lg); fill:var(--sol-text-dim); }
+.sol-tree-svg .sol-tree-accent-label { fill:var(--sol-accent); }
+.sol-tree-svg .sol-tree-warning-label { fill:var(--sol-warn-text,var(--sol-warn)); font-size:var(--sol-text-sm); }
+.sol-tree-mobile { display:none; }
+/* Switch before desktop labels fall below readable page size. Both SVGs have
+   the same meaning; display:none removes the unused one from accessibility. */
+@container (max-width: 1099px) {
+  .sol-tree-desktop { display:none; }
+  .sol-tree-mobile { display:block; max-width:440px; margin-inline:auto; }
+}
+.sol-tree-svg--mobile .sol-tree-id { font-size:var(--sol-text-7xl); }
+.sol-tree-svg--mobile .sol-tree-name { font-size:var(--sol-text-base); }
+.sol-tree-svg--mobile .sol-tree-heading { font-size:var(--sol-text-base); }
+.sol-tree-svg--mobile .sol-tree-label, .sol-tree-svg--mobile .sol-tree-accent-label { font-size:var(--sol-text-base); }
+.sol-tree-svg--mobile .sol-tree-meta, .sol-tree-svg--mobile .sol-tree-warning-label { font-size:var(--sol-text-base); }
+
+/* Approval is a semantic status, requested for this assembly. Keep the words
+   neutral and pair the existing good role with the explicit APPROVED label. */
+.sol-tree-approved-joint { fill:var(--sol-good); }
+
+/* A quiet status wash on the front face preserves neutral extrusion depth. */
+[data-sol-state="APPROVED"] > .sol-tree-plate { fill:color-mix(in srgb, var(--sol-good) 9%, var(--sol-bg)); }
+[data-sol-state="DRAFT"] > .sol-tree-plate { fill:color-mix(in srgb, var(--sol-warn) 9%, var(--sol-bg)); }

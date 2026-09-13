@@ -1,8 +1,8 @@
 # GENERATED — do not edit. Built from canon/tokens.toml by build/emit.py.
 #
-# canon commit  dbc08e8300ee9a337aca93c69f4c9892526fa9b7
-# sha256        a57b8dca0e03fb434071db2eefb672b81ec970b22c22101e2e8a40e5270c68c1
-# built         2026-09-04
+# canon commit  d3528f1efdbd78ed69a09d9abd3cccab98429d98  (working tree dirty)
+# sha256        1a59b5124c3fc61d0d18233c61f0f06700a73128fab899756c2a2d1b7744fa5f
+# built         2026-09-13
 #
 # This is canon's own shape, not any consumer's. Bind it to the names your host
 # already uses rather than reshaping this file — see AGENTS.md.
@@ -23,13 +23,14 @@
 [meta]
 name     = "Solaros"
 slug     = "solaros"
-version  = "1.0.0"
-ruled    = 2026-09-03
+version  = "1.1.0"
+ruled    = 2026-09-13
 rulings  = "canon/DECISIONS.md"
 note     = """
-Sixteen rulings made against a measured census of fourteen surfaces. Two derived
-questions remain open and are marked OPEN-1 and OPEN-2 in DECISIONS.md; the
-values they would fill are absent here rather than guessed."""
+Sixteen rulings made against a measured census of fourteen surfaces, and the
+rulings made since. Four derived questions remain open and are marked OPEN-1,
+OPEN-3, OPEN-4 and OPEN-5 in DECISIONS.md; the values they would fill are absent
+here rather than guessed. OPEN-2 was closed by B3b."""
 
 
 # ===========================================================================
@@ -153,6 +154,42 @@ rule_weight  = "1px"
 dur_fast = "150ms"
 dur_slow = "600ms"
 ease_out = "cubic-bezier(0.16, 1, 0.3, 1)"
+
+
+# ===========================================================================
+# Space and layout
+# ---------------------------------------------------------------------------
+# G3. These values were already decided; they were just decided in the wrong
+# file. `build/primitives.css` carried them as literals — three gaps on the flow
+# classes and a twelve column grid with a 24px gutter on `.sol-grid` — which
+# means canon did not hold a value the estate was already running on. Rule 1
+# says a value is decided once here, so they move here and primitives.css reads
+# them back through `var()`.
+#
+# The source is build/primitives.css as it stood at canon commit c2b6d38.
+# Nothing is new and nothing is corrected: a promotion, not a revision.
+# ===========================================================================
+[space]
+# One owner for every gap. `.sol-flow` and its two variants are the owners; a
+# child never adds its own margin.
+gap_tight = "8px"
+gap       = "16px"
+gap_group = "32px"
+
+[layout]
+columns = 12
+gutter  = "24px"
+# The spans the estate actually uses. A class exists for each in
+# build/primitives.css; the list is here so canon states which ones are real
+# rather than implying all twelve are.
+spans   = [4, 6, 7, 8, 12]
+
+# OPEN, and deliberately valueless — see DECISIONS.md OPEN-4 and OPEN-5. The
+# decks use a 120x140px safe margin and nothing has ruled it, and no baseline
+# unit has ever been ruled at all. Rule 4: an open item carries a marker, never
+# a number, and build/check.py fails if either is quietly filled in.
+safe_margin_open   = "OPEN-4"
+baseline_unit_open = "OPEN-5"
 
 
 # ===========================================================================

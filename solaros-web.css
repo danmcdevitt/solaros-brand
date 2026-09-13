@@ -18,10 +18,13 @@
  *  of your own, e.g.  --accent: var(--sol-accent);
  *
  *  PROVENANCE
- *    canon commit    dbc08e8300ee9a337aca93c69f4c9892526fa9b7
- *    tokens.toml     sha256 a57b8dca0e03fb434071db2eefb672b8
- *                           1ec970b22c22101e2e8a40e5270c68c1
- *    built           2026-09-04
+ *    canon commit    d3528f1efdbd78ed69a09d9abd3cccab98429d98  (working tree dirty)
+ *    tokens.toml     sha256 1a59b5124c3fc61d0d18233c61f0f067
+ *                           00a73128fab899756c2a2d1b7744fa5f
+ *    built           2026-09-13
+ *  WARNING: built from a working tree with uncommitted changes.
+ *  The hashes below still identify the exact bytes used, but the
+ *  commit does not. Commit canon before shipping this file.
  *  ======================================================================
  */
 
@@ -73,6 +76,14 @@
   --sol-dur-fast: 150ms;
   --sol-dur-slow: 600ms;
   --sol-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* space and layout — G3. The flow gaps and the grid, which
+     build/primitives.css reads back rather than restating. */
+  --sol-gap-tight: 8px;
+  --sol-gap: 16px;
+  --sol-gap-group: 32px;
+  --sol-columns: 12;
+  --sol-gutter: 24px;
 
   /* drafting — one ink, four weights. Colour is not how a
      technical drawing separates; width, opacity and dash are.
@@ -341,13 +352,18 @@
 .sol-section { padding-block: 80px; }
 .sol-section + .sol-section { border-top: var(--sol-rule-weight) solid var(--sol-rule); }
 
-/* One owner for every gap. Children must not add their own margins. */
-.sol-flow { display: flex; flex-direction: column; gap: 16px; }
+/* One owner for every gap. Children must not add their own margins. The three
+   gaps and the grid are canon [space] and [layout] — G3. */
+.sol-flow { display: flex; flex-direction: column; gap: var(--sol-gap); }
 .sol-flow > * { margin: 0; }
-.sol-flow-tight { gap: 8px; }
-.sol-flow-group { gap: 32px; }
+.sol-flow-tight { gap: var(--sol-gap-tight); }
+.sol-flow-group { gap: var(--sol-gap-group); }
 
-.sol-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 24px; }
+.sol-grid {
+  display: grid;
+  grid-template-columns: repeat(var(--sol-columns), 1fr);
+  gap: var(--sol-gutter);
+}
 .sol-span-4  { grid-column: span 4; }
 .sol-span-6  { grid-column: span 6; }
 .sol-span-7  { grid-column: span 7; }

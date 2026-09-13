@@ -428,6 +428,19 @@ than a token, which is why it is stated here rather than solved.
 
 None of the three is derivable from what has been ruled. Each needs a decision.
 
+### OPEN-4 · The safe margin is unruled
+
+G3 promoted the gaps and the grid and did not promote this. The deck templates
+compose to 120x140px of padding, which records what was drawn rather than what
+was decided, and the canvas delivery has said so in its header since it was
+first written. `layout.safe_margin_open` holds the marker; there is no number.
+
+### OPEN-5 · There is no baseline unit
+
+No baseline grid has ever been ruled on any Solaros surface. Choosing one sets
+the vertical rhythm of every future layout, so it is a ruling and not a default.
+`layout.baseline_unit_open` holds the marker; there is no number.
+
 ---
 
 ## Not in question
@@ -449,3 +462,165 @@ Recorded so nothing here is reopened by accident.
 - **No gradients inside components**, and no photography — every ground is flat
   or drawn.
 - **Three grounds** — ink, paper and violet, each with a full role set.
+
+
+## F4 — Connected diagrams extend the industrial accent family (working proposal)
+
+2026-09-04. The maintainer approved work on the feature-tree specimen and motion-system approach
+with “lets go”, following review of the feature-tree brief, diagram references
+and Industrial Accents artifact. The first composition was then set aside for
+original flat and dimensional studies. The maintainer selected B, the open assembly, with
+“lets try b but be careful with the actual design and spacing”. The implementation
+uses a tilted feature plate, level labels on definition plates, equal-length
+status stems and a separate vertical mobile arrangement. Not yet published.
+
+Connected diagrams express ownership through containing rails and fixed branches.
+Reuse part IDs, leader captions, registration geometry and attached state markers.
+Structural ink binds to text/text_dim; the selected object and its connected
+branches bind to accent; a single attached attention marker binds to warn.
+This semantic use of colour is scoped to connected diagrams. F3 technical
+assemblies keep their existing drafting ink. Existing drafting weights, type
+steps, durations and easing are reused; no new literal values are introduced.
+
+The maintainer subsequently requested animated feature boxes, typed text and green approval
+markers. This supersedes the initial fixed-node motion proposal: each plate
+settles along its shallow depth axis, then its existing labels reveal in steps.
+Connections trace once, selection becomes violet and attention appears last.
+Approved objects carry a good-role dot beside the neutral APPROVED label.
+No status changes are simulated. The maintainer then specified that the entire left
+assembly must finish before the outgoing connections and right-hand plates
+start. The controller derives this phase boundary from the actual end times
+of left-side plates, typing and the internal ownership line. The completed static figure is the default, including when
+JavaScript is absent or reduced motion is requested. Desktop and mobile share
+content but have separately authored geometry.
+
+The oven example is transcribed from the maintainer's supplied feature-tree reference.
+Its labels and statuses illustrate the structure; they are not a live readout.
+General graph layout and additional assembly choreography are outside this change.
+
+---
+
+## G1 · Vocabulary — ground, surface, format
+
+2026-09-13. Three words were being used for each other's jobs across the estate.
+They are now fixed, and nothing else may be called by these names.
+
+- **Ground** — ink, paper, violet. A ground is a full role set, and it belongs to
+  a section rather than to a document.
+- **Surface** — website, presentation, video. A surface is the medium the work is
+  made for, which is what canon already meant by the word.
+- **Format** — 16:9, 3:4, 1:1. A format is the frame a piece is composed into.
+
+The companion folder `surface-editions/` becomes `ground-editions/`, because what
+it holds is one edition per ground, not one per medium. Its README, its manifest
+and its palette keys move with it.
+
+This is a naming ruling. No value changes and no token is renamed.
+
+**Rejected.** Leaving `surface-editions/` as it stands and correcting the reading
+in prose. The folder name is the first thing an agent sees, and a name that
+contradicts the definition of the word will keep re-teaching the wrong one.
+
+## G2 · Icons — Lucide, no bespoke set
+
+2026-09-13. No bespoke Solaros icon set is built. Lucide is the ruled icon
+source, and it is already a dependency of the docs site, the workspace app
+and the Specify video project, so this ratifies what the estate already runs on.
+Streamline is the reserve for communications assets where Lucide lacks a glyph.
+
+Canon carries the usage rules only. It does not vendor, redraw or extend the set.
+
+- **Stroke.** Where the icon sits inside a drawing, the stroke follows the
+  drafting `visible` weight, so it reads as part of the same drawing. Everywhere
+  else it keeps Lucide's default 2px.
+- **Size.** 16 / 20 / 24 px on web, 24 / 32 px on canvas. Derived, not measured —
+  a later ruling can correct these against a real count.
+- **Colour.** The ground's `text` role. The `accent` is available only when the
+  icon *is* the accent of the composition, under the accent rules that already
+  govern every other mark.
+
+Recorded so the absence of a bespoke set is read as a decision rather than as a
+gap in the system.
+
+**Rejected.** Drawing a Solaros set to match the drafting language. It is the
+largest single piece of work the system could take on, it would have to keep pace
+with Lucide's coverage forever, and the industrial character of a Solaros artefact
+comes from the accents and the drafting ink rather than from the icons.
+
+## G3 · Space and layout promoted into canon
+
+2026-09-13. Canon held no spacing values at all. `build/primitives.css` held
+them instead, as literals: `16px` on `.sol-flow`, `8px` on `.sol-flow-tight`,
+`32px` on `.sol-flow-group`, and a twelve column grid with a `24px` gutter on
+`.sol-grid`. Every artefact in the estate was already running on those numbers.
+
+That is a breach of Rule 1. A value is decided once, in `canon/tokens.toml`, and
+everything downstream is generated. A number that lives only in a build input is
+a number nothing can be checked against, and Phase 2 needs to read these names
+rather than re-measure the CSS to find them.
+
+**What moved.** `[space]` takes the three gaps — `gap_tight` 8px, `gap` 16px,
+`gap_group` 32px. `[layout]` takes `columns` 12, `gutter` 24px, and the span
+list 4 / 6 / 7 / 8 / 12, which records which of the twelve spans the estate
+actually uses rather than implying all of them exist. They emit as
+`--sol-gap-tight`, `--sol-gap`, `--sol-gap-group`, `--sol-columns` and
+`--sol-gutter` into both the web and the canvas delivery, and primitives.css now
+reads them back through `var()`.
+
+**No value changed.** This is a promotion, not a revision. Every number above is
+the number primitives.css was already shipping, and the rendered result is
+identical. Canon's version goes 1.0.0 to 1.1.0 — new tokens, nothing broken.
+
+**What stays open.** Two things, and they stay open because neither has been
+ruled and neither is derivable from what has. The **safe margin** is OPEN-4: the
+decks compose to 120x140px of padding, which is a measurement of what was done,
+not a decision about what should be. The **baseline unit** is OPEN-5: no baseline
+grid has ever been ruled, and choosing one now would set the rhythm of every
+future layout on the strength of nobody having objected. Both carry a marker in
+canon and no number, and `build/check.py` fails if either is quietly filled in.
+
+**Rejected.** Deriving the whole spacing scale from a 4px or 8px base and
+replacing the three gaps with steps on it. It is the tidier system and it is not
+the one the estate runs on: it would restate three known-good values as
+coincidences of a scale nobody has ruled, and the promotion would stop being a
+promotion and become a redesign.
+
+**Rejected.** Promoting the safe margin at its measured 120x140px on the grounds
+that it is what the decks already do. The same argument would have promoted the
+paper `text_muted` defect. A measurement is evidence for a ruling, never a
+substitute for one.
+
+## G4 · Accessibility — targets WCAG 2.2 AA
+
+2026-09-13. Canon states that Solaros **targets** WCAG 2.2 AA. It does not state
+that Solaros meets it, and that difference is the ruling. The colour floors are
+held by the build — 4.5:1 for text against its own ground, 3:1 for a graphical
+mark — and `build/check.py` measures every canon value on every ground on every
+run. The rest of AA is a property of a finished artefact rather than of a token
+table, and canon cannot check it. Claiming conformance on the strength of the
+half that is measured would be a claim the system cannot support.
+
+Two exceptions are declared as of 2026-09-13, both on the paper ground.
+
+- **OPEN-3** — `text_muted` is `#8A8A90`, which measures 3.17:1 on paper and sits
+  under the text floor. It is declared in `canon/tokens.toml`, and
+  `build/check.py` fails if the declaration is removed without the value being
+  fixed. The plan is the OPEN-3 ruling, which already carries two candidate
+  values with real provenance.
+- **Mono labels at 10-12px on paper** run on that same value, so they are illegal
+  on that ground until OPEN-3 is ruled. This is the defect F1 fixed on ink and
+  did not reach on paper, because F1 ruled on ink values only.
+
+The non-colour criteria — keyboard reach, visible focus, text resize to 200%,
+reduced motion honoured, and no information carried by colour alone — go into
+design.md as a five-line checklist worked through by hand. They are review steps,
+not a conformance claim, and canon says so rather than implying otherwise by
+listing them beside the measured floors.
+
+**Rejected.** Writing "Solaros meets WCAG 2.2 AA". Two exceptions are open on the
+paper ground and nothing outside colour has been audited, so the sentence would
+be false on the day it was written.
+
+**Rejected.** Holding the statement back until OPEN-3 is ruled, so that it could
+be made cleanly later. A declared defect is checkable and a hidden one is not,
+which is the reason `build/check.py` requires the declaration to exist at all.

@@ -71,6 +71,14 @@ committed to across the whole surface.
 **Form.** `--sol-radius-sharp` is 2px and radius stops there. `--sol-rule-weight`
 is 1px.
 
+**Icons.** There is no bespoke Solaros icon set and none is coming — see G2 in
+`canon/DECISIONS.md`. Lucide is the ruled source; Streamline is the reserve for
+communications assets where Lucide lacks a glyph. Where the icon sits inside a
+drawing, the stroke follows the drafting `visible` weight; everywhere else it
+keeps Lucide's default 2px. Sizes are 16 / 20 / 24 px on web and 24 / 32 px on
+canvas — derived, not measured. Colour is `--sol-text`, and `--sol-accent` only
+when the icon *is* the accent of the composition.
+
 ### The classes
 
 Write these instead of inventing structure. Each is a decision already made —
@@ -79,16 +87,29 @@ like. Naming the primitive is what takes the decision away from you.
 
 **On every surface** (31)
 
-`sol-atmosphere` · `sol-bracket` · `sol-code` · `sol-eyebrow` · `sol-flow` · `sol-flow-group`\n`sol-flow-tight` · `sol-grid` · `sol-mono` · `sol-numeric` · `sol-panel` · `sol-paper`\n`sol-readout` · `sol-readout-key` · `sol-rule-line` · `sol-section` · `sol-span-12` · `sol-span-4`\n`sol-span-6` · `sol-span-7` · `sol-span-8` · `sol-syn-comment` · `sol-syn-const` · `sol-syn-fn`\n`sol-syn-keyword` · `sol-syn-string` · `sol-syn-type` · `sol-t-` · `sol-table` · `sol-table-wrap`\n`sol-violet`
+`sol-atmosphere` · `sol-bracket` · `sol-code` · `sol-eyebrow` · `sol-flow` · `sol-flow-group`
+`sol-flow-tight` · `sol-grid` · `sol-mono` · `sol-numeric` · `sol-panel` · `sol-paper`
+`sol-readout` · `sol-readout-key` · `sol-rule-line` · `sol-section` · `sol-span-12` · `sol-span-4`
+`sol-span-6` · `sol-span-7` · `sol-span-8` · `sol-syn-comment` · `sol-syn-const` · `sol-syn-fn`
+`sol-syn-keyword` · `sol-syn-string` · `sol-syn-type` · `sol-t-` · `sol-table` · `sol-table-wrap`
+`sol-violet`
 
 **Web only** (42) — a fixed canvas has no hover, focus or active,
 no reflowing measure, and its own type ladder.
 
-`sol-barcode` · `sol-body` · `sol-button` · `sol-button-ghost` · `sol-caption` · `sol-dots`\n`sol-dots-coarse` · `sol-dots-fade` · `sol-draft-centre` · `sol-draft-dim` · `sol-draft-dim-text` · `sol-draft-engrave`\n`sol-draft-hidden` · `sol-draft-thin` · `sol-draft-visible` · `sol-edge-label` · `sol-field` · `sol-h2`\n`sol-h3` · `sol-hazard` · `sol-hazard-label` · `sol-id` · `sol-id-hash` · `sol-leader`\n`sol-leader-dot` · `sol-leader-text` · `sol-lede` · `sol-link` · `sol-numeral` · `sol-numeral-accent`\n`sol-plate` · `sol-plate-key` · `sol-reading` · `sol-reg` · `sol-reg-heavy` · `sol-scale`\n`sol-scale-mark` · `sol-scale-value` · `sol-shell` · `sol-shell-measure` · `sol-tear` · `sol-title`
+`sol-barcode` · `sol-body` · `sol-button` · `sol-button-ghost` · `sol-caption` · `sol-dots`
+`sol-dots-coarse` · `sol-dots-fade` · `sol-draft-centre` · `sol-draft-dim` · `sol-draft-dim-text` · `sol-draft-engrave`
+`sol-draft-hidden` · `sol-draft-thin` · `sol-draft-visible` · `sol-edge-label` · `sol-field` · `sol-h2`
+`sol-h3` · `sol-hazard` · `sol-hazard-label` · `sol-id` · `sol-id-hash` · `sol-leader`
+`sol-leader-dot` · `sol-leader-text` · `sol-lede` · `sol-link` · `sol-numeral` · `sol-numeral-accent`
+`sol-plate` · `sol-plate-key` · `sol-reading` · `sol-reg` · `sol-reg-heavy` · `sol-scale`
+`sol-scale-mark` · `sol-scale-value` · `sol-shell` · `sol-shell-measure` · `sol-tear` · `sol-title`
 
 **Canvas only** (15) — the guided type ladder, named by role.
 
-`sol-canvas` · `sol-mono-object` · `sol-t-body` · `sol-t-body-lg` · `sol-t-chrome` · `sol-t-display`\n`sol-t-headline` · `sol-t-headline-lg` · `sol-t-label` · `sol-t-lead` · `sol-t-lead-lg` · `sol-t-mono`\n`sol-t-statement` · `sol-t-statement-lg` · `sol-t-sub`
+`sol-canvas` · `sol-mono-object` · `sol-t-body` · `sol-t-body-lg` · `sol-t-chrome` · `sol-t-display`
+`sol-t-headline` · `sol-t-headline-lg` · `sol-t-label` · `sol-t-lead` · `sol-t-lead-lg` · `sol-t-mono`
+`sol-t-statement` · `sol-t-statement-lg` · `sol-t-sub`
 
 **The names above are the whole API.** Do not invent a `--sol-*` name, do not
 alias one, and do not read the stylesheet looking for internal selectors to reuse.
@@ -168,8 +189,41 @@ Syntax colouring is deliberately **not** the accent. The accent means *this
 figure is about this* and is spent once. Syntax means *this is what kind of word
 this is* and repeats. Sharing a colour destroys the first meaning.
 
-A state change moves lightness and **holds hue**. A control changes state, not
-colour.
+---
+
+## Motion
+
+Motion is reserved for diagrams, state changes and video. It is never decoration.
+
+| token | value | used for |
+|---|---|---|
+| `dur_fast` | 150ms | state changes and reveals |
+| `dur_slow` | 600ms | layout and opacity |
+| `drafting.motion.duration` | 900ms | explode and assemble |
+| `ease_out` | `cubic-bezier(0.16, 1, 0.3, 1)` | the one curve |
+
+**Explode and assemble** is the motion primitive. Assembled, the object is one
+thing; exploded, it shows its parts, each with a leader to what it is. It runs at
+900ms on the one curve, and it is the only place a 900ms move is correct.
+
+**A state change moves lightness and holds hue.** Lightness moves away from the
+ground, so the same control reads as changed on ink, on paper and on violet. A
+control changes state, not colour.
+
+**Reduced motion settles with no travel.** The parts arrive where they belong
+rather than snapping into place, and the resting geometry is the same geometry
+either way.
+
+**Connected diagrams** move as approved on 2026-09-04. Traces use the shared slow
+duration, staggered by the shared fast duration, with the shared ease-out.
+Reduced motion settles immediately, which is the same no-travel rule applied to
+plates.
+
+**Video is the one surface where motion carries the argument.** Motion must carry
+meaning — a part that moves for atmosphere is the video equivalent of a sticker.
+Construction lines drawing in, then the object appearing on them, is the
+strongest transition available anywhere in this system. Read the video surface
+rules before animating a frame.
 
 ---
 
@@ -246,6 +300,36 @@ below is Solaros's own, and every entry on it happened here.
 
 ---
 
+## Accessibility
+
+Solaros targets WCAG 2.2 AA.
+
+Colour is the part a machine can hold. Text clears 4.5:1 against its own ground
+and a graphical mark clears 3:1, and `build/check.py` measures every canon value
+on every ground on every run. A value that drops under a floor fails the build
+rather than shipping.
+
+Two exceptions are declared, both on the paper ground, both open as of
+2026-09-13.
+
+- **OPEN-3** — `text_muted` measures 3.17:1 on paper, under the text floor. The
+  value is carried with a marker rather than quietly corrected, and the check
+  fails if the declaration is removed without the value being fixed.
+- **Mono labels at 10-12px** on paper run on that same value, so they are illegal
+  on that ground until OPEN-3 is ruled. Until OPEN-3 is closed, the value stays
+  declared as an exception.
+
+The rest of AA is not machine-checkable here. Work through this list by hand —
+checked by hand, not by build.
+
+1. Every control is reachable by keyboard, in the order the page reads.
+2. Focus is visible, drawn as a ring in the accent.
+3. Text resizes to 200% without loss of content or function.
+4. Reduced motion is honoured on every element that moves.
+5. No information is carried by colour alone.
+
+---
+
 ## Per surface
 
 Read `canon/surfaces.toml` for the full picture. In brief:
@@ -253,7 +337,7 @@ Read `canon/surfaces.toml` for the full picture. In brief:
 **Website and docs.** Live DOM. Hover, focus and scroll exist. The web type
 ladder is **governed** — lint refuses a size that is not on it. An accent that
 only appears on hover is invisible to a third of visitors: it may enrich, never
-carry. Reduced motion settles with no travel.
+carry.
 
 **Platform — Specify, Build Engine, workspace.** Same mechanics, different job:
 scanned and operated, not read. Surface the summary before the detail. Encode
@@ -269,10 +353,8 @@ ladder flattens in export. A whole slide can be a spec plate, and often should b
 
 **Video.** 1920×1080 frames captured to MP4. **Time is the constraint the other
 surfaces do not have.** If it cannot be read in the time it is up, it is not on
-the screen. Truncate a hash to eight characters; never scroll one. Motion must
-carry meaning — a part that moves for atmosphere is the video equivalent of a
-sticker. Construction lines drawing in, then the object appearing on them, is the
-strongest transition available anywhere in this system.
+the screen. Truncate a hash to eight characters; never scroll one. Motion on this
+surface follows the Motion section above.
 *The compression rules in `surfaces.toml` are engineering reasoning and have not
 been measured against a real encode. Test before relying on them.*
 
@@ -317,3 +399,43 @@ self-critique.
 - Show a state as colour alone.
 - Edit a consumer repo because canon changed. Consumers are bound to canon one
   at a time, deliberately, deliberately, and never as a side effect of another change.
+
+
+## Connected diagrams
+
+Decision F4 extends the Industrial Accents family to ownership diagrams.
+Load `solaros-connected-diagrams.css` alongside the delivery for your surface.
+The module `solaros-connected-diagrams.mjs` exports `renderFeatureTree` and
+`connectDiagramMotion`. The renderer produces complete SVG markup at build time;
+pass a unique `id` per SVG and choose `desktop` or `mobile` layout. The selected open-assembly recipe uses a
+tilted feature plate and front-facing definition plates so secondary labels
+remain level. Feature status stems follow the lower edge with equal offsets.
+The attention marker has a reserved desktop gutter and a dedicated mobile
+row gap; it never competes with status text. Desktop changes to the mobile
+composition before its labels become too small. Wrap the two
+layouts in `.sol-tree-desktop` and `.sol-tree-mobile` inside `.sol-connected`.
+The container selects its composition by available width.
+
+The first figure is the oven-feature example. Its content comes from the supplied
+reference, not a live product state. Structure uses text ink; selection uses
+accent; one attached warning uses warn. Existing drafting line weights and web
+type steps carry the hierarchy. The selected feature's three indicators stay
+attached to it. MoSCoW belongs to the feature; EARS belongs to each requirement
+branch. The containing rail represents the feature set.
+
+`connectDiagramMotion(root, {auto: true})` plays on first intersection. Its
+controller exposes `play()`, `finish()` and `destroy()`. A specimen can use
+`auto: false` and a replay button. Plates settle along their depth axes and their labels reveal in character
+steps, using whole-glyph opacity so the complete text and layout remain present. Green
+dots use the existing good role only beside APPROVED labels. Attention appears
+after the last connection and label. The entire left assembly completes first;
+the right side stays hidden until that boundary, then its connections and
+plates enter. Feature IDs arrive whole with their plates, and left-side names
+type in reading order across both lines during the plate entrance. All labels
+finish with their plate, including right-side details; no character is partially clipped. Destroy cancels motion,
+disconnects the observer and removes the media listener. The final geometry never changes. There is no scroll-linked movement or loop.
+
+The public CSS API for this recipe consists of `.sol-connected`,
+`.sol-tree-desktop`, `.sol-tree-mobile` and renderer-owned `.sol-tree-*` classes.
+Hosts should not recreate the internals. Keep labels readable at the rendered
+size; recompose vertically before shrinking the desktop drawing into tiny text.

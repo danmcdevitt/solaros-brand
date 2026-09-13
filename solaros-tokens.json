@@ -1,10 +1,10 @@
 {
   "_generated": "from canon/tokens.toml by build/emit.py \u2014 do not edit",
   "_provenance": {
-    "commit": "dbc08e8300ee9a337aca93c69f4c9892526fa9b7",
-    "dirty": false,
-    "built": "2026-09-04",
-    "tokens_sha256": "a57b8dca0e03fb434071db2eefb672b81ec970b22c22101e2e8a40e5270c68c1",
+    "commit": "d3528f1efdbd78ed69a09d9abd3cccab98429d98",
+    "dirty": true,
+    "built": "2026-09-13",
+    "tokens_sha256": "1a59b5124c3fc61d0d18233c61f0f06700a73128fab899756c2a2d1b7744fa5f",
     "surfaces_sha256": "bf56c54e40dbe121e9f8fcb21fd1195a4897bd0f23c1d56f7a546e5f5f8dee85"
   },
   "literal": {
@@ -120,6 +120,24 @@
     "dur_fast": "150ms",
     "dur_slow": "600ms",
     "ease_out": "cubic-bezier(0.16, 1, 0.3, 1)"
+  },
+  "space": {
+    "gap_tight": "8px",
+    "gap": "16px",
+    "gap_group": "32px"
+  },
+  "layout": {
+    "columns": 12,
+    "gutter": "24px",
+    "spans": [
+      4,
+      6,
+      7,
+      8,
+      12
+    ],
+    "safe_margin_open": "OPEN-4",
+    "baseline_unit_open": "OPEN-5"
   },
   "ground": {
     "ink": {

@@ -12,9 +12,12 @@ edit nothing in this repo; it is overwritten on every publish.
 | [`solaros-tokens.toml`](solaros-tokens.toml) | The same, for consumers that already parse TOML |
 | [`solaros-figures.js`](solaros-figures.js) | Three parametric technical drawings &mdash; rings, dispatcher, state machine |
 | [`DECISIONS.md`](DECISIONS.md) | Why each value is what it is, and what was rejected |
+| [`CHANGELOG.md`](CHANGELOG.md) | Every change by date and version, and the standing deprecations |
 | [reference](https://danmcdevitt.github.io/solaros-brand/) | The browsable reference |
 
 ## Using it
+
+Agents: start with [AGENTS.md](AGENTS.md) to choose the task-specific context.
 
 Every emitted name carries a `sol-` prefix so a file drops into any host without
 colliding. **Bind, do not copy:**
@@ -27,6 +30,11 @@ colliding. **Bind, do not copy:**
 Each file's header carries the canon commit and the SHA-256 of the source it was
 built from, so a consumer can always answer which version it is built against.
 
+## Contributing
+
+Changes are proposed as GitHub issues on the private canon repository, by
+invitation. Contact the maintainer.
+
 ## Two open questions
 
 Values are absent rather than guessed. See `DECISIONS.md`.
@@ -36,5 +44,5 @@ Values are absent rather than guessed. See `DECISIONS.md`.
 
 ---
 
-Generated 2026-09-04 from the private canon repo. Not accepting pull requests —
+Generated 2026-09-13 from the private canon repo. Not accepting pull requests —
 changes are made to canon and republished.
