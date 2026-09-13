@@ -33,7 +33,7 @@ built from, so a consumer can always answer which version it is built against.
 ## Contributing
 
 Changes are proposed as GitHub issues on the private canon repository, by
-invitation. Contact the maintainer.
+invitation. Contact Dan.
 
 ## Open questions
 

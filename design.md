@@ -408,7 +408,7 @@ self-critique.
 - Put a gradient inside a component.
 - Show a state as colour alone.
 - Edit a consumer repo because canon changed. Consumers are bound to canon one
-  at a time, deliberately, deliberately, and never as a side effect of another change.
+  at a time, deliberately, on Dan's word.
 
 
 ## Connected diagrams

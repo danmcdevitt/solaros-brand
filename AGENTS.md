@@ -24,7 +24,7 @@ If the task requires private resources and the companion is absent, state the mi
 
 ## Contributing
 
-Changes are proposed as GitHub issues on the private canon repository, by invitation. Contact the maintainer.
+Changes are proposed as GitHub issues on the private canon repository, by invitation. Contact Dan.
 
 ## Distribution boundary
 

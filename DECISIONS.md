@@ -466,10 +466,10 @@ Recorded so nothing here is reopened by accident.
 
 ## F4 — Connected diagrams extend the industrial accent family (working proposal)
 
-2026-09-04. The maintainer approved work on the feature-tree specimen and motion-system approach
+2026-09-04. Dan approved work on the feature-tree specimen and motion-system approach
 with “lets go”, following review of the feature-tree brief, diagram references
 and Industrial Accents artifact. The first composition was then set aside for
-original flat and dimensional studies. The maintainer selected B, the open assembly, with
+original flat and dimensional studies. Dan selected B, the open assembly, with
 “lets try b but be careful with the actual design and spacing”. The implementation
 uses a tilted feature plate, level labels on definition plates, equal-length
 status stems and a separate vertical mobile arrangement. Not yet published.
@@ -482,19 +482,19 @@ This semantic use of colour is scoped to connected diagrams. F3 technical
 assemblies keep their existing drafting ink. Existing drafting weights, type
 steps, durations and easing are reused; no new literal values are introduced.
 
-The maintainer subsequently requested animated feature boxes, typed text and green approval
+Dan subsequently requested animated feature boxes, typed text and green approval
 markers. This supersedes the initial fixed-node motion proposal: each plate
 settles along its shallow depth axis, then its existing labels reveal in steps.
 Connections trace once, selection becomes violet and attention appears last.
 Approved objects carry a good-role dot beside the neutral APPROVED label.
-No status changes are simulated. The maintainer then specified that the entire left
+No status changes are simulated. Dan then specified that the entire left
 assembly must finish before the outgoing connections and right-hand plates
 start. The controller derives this phase boundary from the actual end times
 of left-side plates, typing and the internal ownership line. The completed static figure is the default, including when
 JavaScript is absent or reduced motion is requested. Desktop and mobile share
 content but have separately authored geometry.
 
-The oven example is transcribed from the maintainer's supplied feature-tree reference.
+The oven example is transcribed from Dan's supplied feature-tree reference.
 Its labels and statuses illustrate the structure; they are not a live readout.
 General graph layout and additional assembly choreography are outside this change.
 
